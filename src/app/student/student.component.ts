@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { InsertService } from '../insert.service';
 import { UserComponent } from '../user/user.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student',
@@ -45,6 +45,22 @@ export class StudentComponent implements OnInit {
       this.div3=true;
       this.div2=false;
       this.div1=false;
+  }
+  selectFunction(event: any) {
+    const selectedValue = event.target.value;
+    switch (selectedValue) {
+      case 'mechanical':
+        this.div1Function();
+        break;
+      case 'electronics':
+        this.div2Function();
+        break;
+      case 'computer':
+        this.div3Function();
+        break;
+      default:
+        console.log("Invalid selection");
+    }
   }
 
 //   div4Function(){
