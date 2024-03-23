@@ -12,7 +12,7 @@ export class InsertService {
 
   
   url5="http://localhost:8081/insertadmin"
-  url6="http://localhost:8081/loginadmin"
+  url6="http://localhost:8081/api/v1/admin/login"
   url7="http://localhost:8081/viewadmin"
 
   url1="http://localhost:8081/addstudent"
@@ -86,6 +86,8 @@ export class InsertService {
     
   }
 
+
+
   addStudent(data:any){
     return this.http.post(this.url1, data);
   }
@@ -106,6 +108,7 @@ export class InsertService {
   public loginUserFromRemote(user:UserComponent):Observable<object>{
     console.log(user);
     return this.http.post(this.url2,user);
+    
   }
 
 

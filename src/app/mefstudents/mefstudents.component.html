@@ -83,7 +83,7 @@
 <div *ngIf="div2">
 <!-- <div class="operation"> -->
   <div class="container" style="background-color:white; padding: 15px 15px 60px 15px; border-radius: 15px;width: 600px;">
-  <h2 style="text-align:center;color: red;">Add Students</h2><br>
+  <h2 style="text-align:center;color: red;">Add Student</h2><br>
 <form #insertdata="ngForm" (ngSubmit)="insertdetails(insertdata)">
 
   <div class="form-outline" style="width: 100px;"> 
@@ -123,7 +123,7 @@
 
 <div class="form-outline" style="width: 220px;"> 
 <label class="form-label" for="form2Example7">Mobile No.</label>
-<input type="text" id="form2Example7" placeholder="mobileno" class="form-control" name="mobileno" ngModel>
+<input type="number" id="form2Example7" placeholder="Enter mobile number" class="form-control" name="mobileno" maxlength="10">
 </div><br>
 
   <div class="form-outline" style="width: 250px;"> 
