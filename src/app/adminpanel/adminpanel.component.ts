@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./adminpanel.component.css']
 })
 export class AdminpanelComponent implements OnInit {
+username: any;
 
   constructor() { }
 

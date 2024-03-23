@@ -1,5 +1,5 @@
 body {
-  background-color: blue;
+  background-color: rgb(44, 44, 75);
 }
 @media (min-width: 991.98px) {
   main {
@@ -7,17 +7,31 @@ body {
   }
 }
 
-/* Sidebar */
 .sidebar {
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
-  padding: 0px 0px 10px 10px; /* Height of navbar */
-  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+  padding: 0px 0px 10px 10px; 
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5), 0 2px 10px 0 rgba(0, 0, 0, 0.5); 
   width: 240px;
   z-index: 600;
+  
+  
 }
+.ripple {
+  /* Define initial styles */
+  background-color: initial-color; 
+  color: initial-text-color; 
+  transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.ripple:hover {
+  background-color: rgb(193, 193, 206);
+  color: new-text-color; 
+  
+}
+
 
 @media (max-width: 991.98px) {
   .sidebar {
@@ -35,16 +49,29 @@ body {
   height: calc(100vh - 48px);
   padding-top: 0.5rem;
   overflow-x: hidden;
-  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  overflow-y: auto; 
 }
 .main {
   margin-left: 240px; /* Same as the width of the sidenav */
   padding: 0px 0px;
+  
+}
+.navbar-brand h3 {
+  height: 90px;
+  padding-top: 30px;
+  padding-bottom: 90px;
+  color: #b9f7be;
+ 
+  font-size: 20px; 
+  font-weight: bold; 
+  text-align: center; 
+  
 }
 
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+  width: 65%;
+  
 }
