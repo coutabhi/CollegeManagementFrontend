@@ -1,27 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { InsertService } from '../insert.service';
-
 
 @Component({
   selector: 'app-afaculties',
   templateUrl: './afaculties.component.html',
   styleUrls: ['./afaculties.component.css']
 })
-export class AfacultiesComponent implements OnInit {
+export class AfacultiesComponent {
+  
+  selectedBranch: string | null = null;
+  constructor(private router: Router) {
+    
+   }
 
-  constructor(private router:Router) { }
-
-  ngOnInit(): void {
-  }
-
-  me(){
-    this.router.navigateByUrl("/mefaculties");
-  }
-  ee(){
-    this.router.navigateByUrl("/eefaculties");
-  }
-  ce(){
-    this.router.navigateByUrl("/cefaculties");
+  selectBranch() {
+    switch (this.selectedBranch) {
+      case 'me':
+        this.router.navigateByUrl("/mefaculties");
+        break;
+      case 'ee':
+        this.router.navigateByUrl("/eefaculties");
+        break;
+      case 'ce':
+        this.router.navigateByUrl("/cefaculties");
+        break;
+      default:
+        break;
+    }
   }
 }

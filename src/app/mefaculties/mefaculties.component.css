@@ -1,13 +1,13 @@
 .main {
-    margin-left: 250px; 
+    margin-left: 200px; 
     margin-right: 10px;
     padding: 0px 0px;
   }
   span{
-    background-color:#3399ff; 
-    color:whitesmoke;
+    /* background-color:black;  */
+    /* color:white; */
     padding: 5px 35px 5px 35px;
-    border-radius: 15px;
+    border-radius: 5px;
     }
 
     table, th, td {
@@ -16,7 +16,7 @@
       text-align: center;
     }
     th{
-      background-color: #3399ff;
+      background-color: #efeff0;
     }
 
     td{
@@ -29,30 +29,21 @@
     
   }
 
-  /* .operation{
-    
-    
-    width: 80px;
-  } */
-
   .button {
     margin-left: 230px ;
     display: block;
     padding: 5px 35px;
     font-size: 24px;
-    cursor: pointer;
     text-align: center;
-    text-decoration: none;
-    outline: none;
     color: #fff;
-    background-color: #3399ff;
+    background-color: black;
     border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
+    border-radius: 5px;
     position: absolute;
   }
   
-  .button:hover {background-color: brown}
+  .button:hover {background-color: white;
+  color: black;}
   
   .button:active {
     background-color: #3399ff;

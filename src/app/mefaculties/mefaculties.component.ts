@@ -41,7 +41,7 @@ export class MefacultiesComponent implements OnInit {
     this.is.viewMEFaculties().subscribe((resp1:any)=>{this.loginpages=resp1;});
   }
  
-    div1:boolean=false;
+    div1:boolean=true;
     div2:boolean=false;
     div3:boolean=false;
     div4:boolean=false;
