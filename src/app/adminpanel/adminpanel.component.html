@@ -1,7 +1,37 @@
-<!--Main Navigation-->
-    <!-- Sidebar -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Add your custom styles here */
+        .navbar-brand h3 {
+            margin: 0;
+            padding: 20px 0;
+            font-size: 1.5rem;
+        }
+        .navbar-nav {
+            align-items: center;
+        }
+        .nav-item {
+            margin-left: 10px;
+        }
+        .dropdown-menu {
+            min-width: 150px;
+        }
+        .dropdown-menu a {
+            padding: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Navigation -->
     <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
         <div class="position-sticky">
+<<<<<<< HEAD
           <div class="list-group list-group-flush mx-3 mt-4" class="Lab">
             
             <img src="/assets/admin-logo.jpg" height="140px" width="" alt="" loading="" class="center" /> <br>
@@ -112,15 +142,56 @@
               </ul>
             </li>
           </ul>
+=======
+            <div class="list-group list-group-flush mx-3 mt-4">
+                <img src="/assets/admin-logo.jpg" height="140" width="" alt="" loading="" class="center" /> <br>
+                <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" routerLink="/adashboard" routerLinkActive="active" href="#">
+                    <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Dashboard</span>
+                </a>
+                <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" routerLink="/astudents" routerLinkActive="active" href="#">
+                    <i class="fas fa-users fa-fw me-3"></i><span>Students</span>
+                </a>
+                <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" routerLink="/afaculties" routerLinkActive="active" href="#">
+                    <i class="fas fa-users fa-fw me-3"></i><span>Faculties</span>
+                </a>
+                <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" routerLink="/astaff" routerLinkActive="active" href="#">
+                    <i class="fas fa-users fa-fw me-3"></i><span>Other Staff</span>
+                </a>
+                <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" routerLink="/acourse" routerLinkActive="active" href="#">
+                    <i class="fas fa-globe fa-fw me-3"></i><span>Branch</span>
+                </a>
+                <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" routerLink="/anotification" routerLinkActive="active" href="#">
+                    <i class="fas fa-money-bill fa-fw me-3"></i><span>Reports</span>
+                </a>
+                <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" routerLink="/admin" routerLinkActive="active" href="#">
+                    <i class="fas fa-lock fa-fw me-3"></i><span>Logout</span>
+                </a>
+            </div>
         </div>
-        <!-- Container wrapper -->
-      </nav>
-      <!-- Navbar -->
-    
-    <!--Main Navigation-->
-    
+    </nav>
+    <!-- Navbar -->
+    <nav id="main-navbar" class="main navbar navbar-expand-sm navbar-light fixed-top" style="background-color: #DFF5FF;">
+        <div class="container-fluid"> 
+            <a class="navbar-brand" href="#">
+                <h3>Welcome to Admin Panel</h3>
+            </a>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                        <img src="/assets/admin-logo.jpg" class="rounded-circle" height="32" alt="" loading="lazy">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                        <li>
+                            <a class="dropdown-item" aria-current="page" routerLink="/admin" routerLinkActive="active" href="#">Logout</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+>>>>>>> 2cab702b7633dd21332d61b6b55a6b02bfb4d65d
+        </div>
+    </nav>
     <!--Main layout-->
-    <main style="margin-top: 0px;">
-      <div class="container pt-4 "></div>
+    <main>
     </main>
-    <!--Main layout-->
+</body>
+</html>

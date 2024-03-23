@@ -1,0 +1,15 @@
+.form-control.is-invalid {
+    border-color: #dc3545;
+  }
+  
+  .form-control.is-invalid:focus {
+    box-shadow: 0 0 0 0.2rem rgb(220, 53, 69, 0.25);
+  }
+  
+  .form-control.is-valid {
+    border-color: #28a745;
+  }
+  
+  .form-control.is-valid:focus {
+    box-shadow: 0 0 0 0.2rem rgb(40, 167, 69, 0.25);
+  }

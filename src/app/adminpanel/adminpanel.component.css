@@ -1,5 +1,9 @@
 body {
+<<<<<<< HEAD
   background-color: rgb(44, 44, 75);
+=======
+  background-color: #DFF5FF !important;
+>>>>>>> 2cab702b7633dd21332d61b6b55a6b02bfb4d65d
 }
 @media (min-width: 991.98px) {
   main {
@@ -52,7 +56,7 @@ body {
   overflow-y: auto; 
 }
 .main {
-  margin-left: 240px; /* Same as the width of the sidenav */
+  margin-left: 240px;
   padding: 0px 0px;
   
 }
@@ -67,6 +71,7 @@ body {
   text-align: center; 
   
 }
+<<<<<<< HEAD
 
 .center {
   display: block;
@@ -75,3 +80,5 @@ body {
   width: 65%;
   
 }
+=======
+>>>>>>> 2cab702b7633dd21332d61b6b55a6b02bfb4d65d

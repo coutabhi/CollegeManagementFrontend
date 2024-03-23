@@ -1,17 +1,21 @@
 <app-adminpanel></app-adminpanel>
 
-<div class="main">
-    <h1 style="text-align:center;"><span>Faculties</span></h1><br><br>
-
-<div  style="margin: 10px; margin-left:0px; float: left; width: 320px;">
-<button  class="button" (click)="me()">Mechanical Engineering</button>
-</div>
-
-<div  style="margin: 10px; float: left; width: 310px;">
-<button  class="button" (click)="ee()">Electronics Engineering</button>
-</div>
-
-<div style="margin: 10px; float: left; width: 110px;">
-<button  class="button" (click)="ce()">Computer Engineering</button>
-</div>
-</div>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-12 text-center">
+        <div class="main">
+          <h1 class=""><span>Faculties</span></h1><br><br>
+          <h3 class="mr-5 mb-2  ">Choose the Branch to Continue</h3>
+          <div class="input-group mb-3">
+            <select class="form-control" [(ngModel)]="selectedBranch" (change)="selectBranch()">
+              <option value="" disabled selected>Select Branch</option>
+              <option value="me">Mechanical Engineering</option>
+              <option value="ee">Electronics Engineering</option>
+              <option value="ce">Computer Engineering</option>
+            </select>
+          </div>
+        </div>
+        <app-adminpanel></app-adminpanel>
+      </div>
+    </div>
+  </div>
