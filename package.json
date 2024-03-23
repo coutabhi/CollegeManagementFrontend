@@ -31,7 +31,6 @@
     "ngx-wow": "^2.0.1",
     "owl.carousel": "^2.3.4",
     "rxjs": "~7.5.0",
-    "tslib": "^2.3.0",
     "waypoints": "^4.0.1",
     "zone.js": "~0.11.4"
   },
@@ -46,6 +45,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "tslib": "^2.6.2",
     "typescript": "~4.7.2"
   }
 }
