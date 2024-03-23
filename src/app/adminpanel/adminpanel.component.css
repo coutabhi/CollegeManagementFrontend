@@ -1,5 +1,5 @@
 body {
-  background-color: blue;
+  background-color: #DFF5FF !important;
 }
 @media (min-width: 991.98px) {
   main {
@@ -38,13 +38,6 @@ body {
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
 .main {
-  margin-left: 240px; /* Same as the width of the sidenav */
+  margin-left: 240px;
   padding: 0px 0px;
-}
-
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
 }

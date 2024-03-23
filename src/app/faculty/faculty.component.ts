@@ -32,24 +32,40 @@ export class FacultyComponent implements OnInit {
   div1:boolean=false;
   div2:boolean=false;
   div3:boolean=false;
- 
   div1Function(){
-      this.div1=true;
-      this.div2=false;
-      this.div3=false;
-  }
+    this.div1=true;
+    this.div2=false;
+    this.div3=false;
+}
 
-  div2Function(){
-      this.div2=true;
-      this.div1=false;
-      this.div3=false;
-  }
+div2Function(){
+    this.div2=true;
+    this.div1=false;
+    this.div3=false;
+}
 
-  div3Function(){
-      this.div3=true;
-      this.div2=false;
-      this.div1=false;
+div3Function(){
+    this.div3=true;
+    this.div2=false;
+    this.div1=false;
+}
+  selectFunction(event: any) {
+    const selectedValue = event.target.value;
+    switch (selectedValue) {
+      case 'mechanical':
+        this.div1Function();
+        break;
+      case 'electronics':
+        this.div2Function();
+        break;
+      case 'computer':
+        this.div3Function();
+        break;
+      default:
+        console.log("Invalid selection");
+    }
   }
+  
 
 //   div4Function(){
 //     this.div2=false;

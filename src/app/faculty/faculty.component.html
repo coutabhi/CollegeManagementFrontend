@@ -2,21 +2,15 @@
   <!-- <div class="main"> -->
     <h1 style="text-align:center;"><span>Faculty Login</span></h1><br><br><br>
 
-<div  style=" float:left; width: 50px;margin-right: 0px;">
-<button  class="button" (click)="div1Function()">Mechanical Engg.</button>
-</div>
-
-<div  style=" float: left; width: 50px;margin-left:300px;">
-<button  class="button" (click)="div2Function()">Electronics Engg.</button>
-</div>
-
-<div style=" float: left; width: 50px;margin-left:600px;">
-<button  class="button" (click)="div3Function()">Computer Engg.</button>
-</div><br><br><br><br>
-
-<!-- <div style=" float: left; width: 50px;margin-left:785px;">
-<button  class="button" (click)="div4Function()">Hide</button>
-</div><br><br><br><br> -->
+    <div style="text-align: center;">
+      <select class="dropdown" (change)="selectFunction($event)">
+        <option value="">Select Branch</option>
+        <option value="mechanical">Mechanical Engg.</option>
+        <option value="electronics">Electronics Engg.</option>
+        <option value="computer">Computer Engg.</option>
+      </select>
+    </div>
+    
 
 <div *ngIf="div1">
   <h2 style="text-align:center;"><span>M.E. Faculty Login</span></h2> 

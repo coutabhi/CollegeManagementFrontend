@@ -106,6 +106,7 @@ export class InsertService {
   }
 
   public loginUserFromRemote(user:UserComponent):Observable<object>{
+    console.log("In the loginUserFromRemote")
     console.log(user);
     return this.http.post(this.url2,user);
     
