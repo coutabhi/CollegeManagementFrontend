@@ -34,4 +34,26 @@ div.gallery {
   h1,h2,h3,h5{
     font-family:'Times New Roman', Times, serif ;
   }
+
+
+  .marquee-container {
+    width: 100%;
+}
+
+.marquee {
+    font-size: 40px;
+    color: #942929;
+    white-space: nowrap;
+    position: absolute;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
   
