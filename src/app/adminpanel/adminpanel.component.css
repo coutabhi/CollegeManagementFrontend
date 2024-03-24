@@ -1,9 +1,5 @@
 body {
-<<<<<<< HEAD
   background-color: rgb(44, 44, 75);
-=======
-  background-color: #DFF5FF !important;
->>>>>>> 2cab702b7633dd21332d61b6b55a6b02bfb4d65d
 }
 @media (min-width: 991.98px) {
   main {
@@ -71,7 +67,6 @@ body {
   text-align: center; 
   
 }
-<<<<<<< HEAD
 
 .center {
   display: block;
@@ -80,5 +75,3 @@ body {
   width: 65%;
   
 }
-=======
->>>>>>> 2cab702b7633dd21332d61b6b55a6b02bfb4d65d
