@@ -1,246 +1,205 @@
 <app-adminpanel></app-adminpanel>
 
-<div class="main">
-    <h1 style="text-align:center;"><span>Electronics Engineering</span></h1><br><br>
-
-<div  style="margin: 30px; margin-left:0px; float: left; width: 180px;">
-<button  class="button" (click)="div1Function()">Faculties Data</button>
-</div>
-
-<div  style="margin: 30px; float: left; width: 75px;">
-<button  class="button" (click)="div2Function()">Add</button>
-</div>
-
-<div style="margin: 30px; float: left; width: 110px;">
-<button  class="button" (click)="div3Function()">Update</button>
-</div>
-
-<div style="margin: 30px; float: left; width: 100px;">
-<button  class="button" (click)="div4Function()">Delete</button>
-</div>
-
-<div style="margin: 30px; float: left; width: 80px;">
-<button  class="button" (click)="div5Function()">Hide</button>
-</div><br><br><br><br>
-
-<div *ngIf="div1">
-    <div class="container" style="background-color:white; padding: 8px 15px 15px 15px; border-radius: 15px;width:1200px ;">
-      <h2 style="text-align:center;color: red;">Faculties Data</h2>
-          <table  cellspacing="15" style="width:100%" >
-          <tr>
-              <th>
-                 Id
-              </th>
-              <th>
-                 First Name
-              </th>
-              <th>
-                 Last Name
-             </th>
-             <th>
-                 Gender
-              </th>
-              <th>
-                Designation
-             </th>
-             <!-- <th>
-                 Branch
-             </th>
-             <th>
-                 Year
-             </th>
-             <th>
-                 Sem
-            </th> -->
-             <th>
-                Mobile No.
-            </th>
-            <th>
-                Email address
-            </th>
-            <th>
-                Password
-            </th>
-          </tr>
-
-      
-          <tr *ngFor="let l of loginpages">
-          
-              <td>{{l.id}}</td>
-              <td>{{l.firstname}}</td>
-              <td>{{l.lastname}}</td>
-              <td>{{l.gender}}</td>
-              <td>{{l.designation}}</td>
-              <!-- <td>{{l.branch}}</td>
-              <td>{{l.year}}</td>
-              <td>{{l.sem}}</td> -->
-              <td>{{l.mobileno}}</td>
-              <td>{{l.email}}</td>
-              <td>{{l.password}}</td>
-    
-          </tr>
-  
-    </table>
-    </div><br><br>
-  </div>
-
-<div *ngIf="div2">
-<!-- <div class="operation"> -->
-  <div class="container" style="background-color:white; padding: 15px 15px 60px 15px; border-radius: 15px;width: 600px;">
-  <h2 style="text-align:center;color: red;">Add Faculties</h2><br>
-<form #insertdata="ngForm" (ngSubmit)="insertdetails(insertdata)">
-
-  <div class="form-outline" style="width: 100px;"> 
-  <label class="form-label" for="form2Example1">Id</label>
-  <input type="text" id="form2Example1" placeholder="id" class="form-control" name="id" ngModel>
-</div>
-
-<div class="form-outline" style="width: 200px;"> 
-<label class="form-label" for="form2Example2" >First Name</label>
-<input type="text" id="form2Example2" placeholder="firstname" class="form-control" name="firstname" ngModel>
-</div>
-
-<div class="form-outline" > 
-<label class="form-label" for="form2Example3">Last Name</label>
-<input type="text" id="form2Example3" placeholder="lastname" class="form-control" name="lastname" ngModel>
-</div><br><br><br><br>
-
-<div class="form-outline" style="width: 170px;"> 
-  <label class="form-label" for="form2Example4">Gender</label>
-  <input type="text" id="form2Example4" placeholder="gender" class="form-control" name="gender" ngModel>
-</div>
-
-    <div class="form-outline" style="width: 170px;"> 
-    <label class="form-label" for="form2Example5">Designation</label>
-    <input type="text" id="form2Example5" placeholder="designation" class="form-control" name="designation" ngModel>
-  </div>
-
-
-<!-- <div class="form-outline" style="width: 170px;"> 
-<label class="form-label" for="form2Example5">Branch</label>
-<input type="text" id="form2Example5" placeholder="branch" class="form-control" name="branch" ngModel>
-</div>
-
-<div class="form-outline" style="width: 170px;"> 
-<label class="form-label" for="form2Example6">Year</label>
-<input type="text" id="form2Example6" placeholder="year" class="form-control" name="year" ngModel>
-</div>
-
-<div class="form-outline" style="width: 170px;"> 
-  <label class="form-label" for="form2Example5">Sem</label>
-  <input type="text" id="form2Example5" placeholder="sem" class="form-control" name="sem" ngModel>
-  </div> -->
-
-<div class="form-outline" style="width: 220px;"> 
-<label class="form-label" for="form2Example6">Mobile No.</label>
-<input type="text" id="form2Example6" placeholder="mobileno" class="form-control" name="mobileno" ngModel>
-</div><br>
-
-  <div class="form-outline" style="width: 250px;"> 
-      <!-- <small class="text-danger">{{msg}}</small><br> -->
-    <label class="form-label" for="form2Example7">Email address</label>
-    <input type="email" id="form2Example7" placeholder="abc@xyz.com" class="form-control" name="email" ngModel>
-    <!-- <div *ngIf="email.invalid && email.touched"><small class="text-danger">Enter Correct Email</small></div>  -->
-  </div><br><br><br><br><br>
-
-  <div class="form-outline mb-4">
-    <label class="form-label" for="form2Example8">Password</label>
-    <input type="password" required minlength="5" maxlength="16" id="form2Example8" placeholder="password" class="form-control" name="password" ngModel>
-    <!-- <div *ngIf="password.invalid && password.touched"><small class="text-danger">Password should not be blank</small></div>    -->
-  </div><br><br><br><br><br><br>
-  <button  class="button" type="submit" value="Insert" (click)="insertdetails(insertdata)" >Add </button><br>
-</form>
-  </div><br><br>
-  <!-- </body> -->
-<!-- </div> -->
-</div>
-
-<div *ngIf="div3">
-<!-- <div class="operation"> -->
-  <div class="container" style="background-color:white; padding: 15px 15px 60px 15px; border-radius: 15px;width: 600px;" >
-<h2 style="text-align:center;color: red;">Update Faculties</h2><br>
-<form #data="ngForm" (ngSubmit)="updateLoginpage(data)">
-
-<div class="form-outline" style="width: 100px;"> 
-<label class="form-label" for="form2Example1">Id</label>
-<input type="text" id="form2Example1" placeholder="id" class="form-control" name="id" ngModel>
-</div>
-
-<div class="form-outline" style="width: 200px;"> 
-<label class="form-label" for="form2Example2" >First Name</label>
-<input type="text" id="form2Example2" placeholder="firstname" class="form-control" name="firstname" ngModel>
-</div>
-
-<div class="form-outline" > 
-<label class="form-label" for="form2Example3">Last Name</label>
-<input type="text" id="form2Example3" placeholder="lastname" class="form-control" name="lastname" ngModel>
-</div><br><br><br><br>
-
-<div class="form-outline" style="width: 170px;"> 
-  <label class="form-label" for="form2Example4">Gender</label>
-  <input type="text" id="form2Example4" placeholder="gender" class="form-control" name="gender" ngModel>
-</div>
-
-<div class="form-outline" style="width: 170px;"> 
-    <label class="form-label" for="form2Example5">Designation</label>
-    <input type="text" id="form2Example5" placeholder="designation" class="form-control" name="designation" ngModel>
-</div>
-
-<!-- <div class="form-outline" style="width: 170px;"> 
-<label class="form-label" for="form2Example5">Branch</label>
-<input type="text" id="form2Example5" placeholder="branch" class="form-control" name="branch" ngModel>
-</div>
-
-<div class="form-outline" style="width: 170px;"> 
-<label class="form-label" for="form2Example5">Year</label>
-<input type="text" id="form2Example5" placeholder="year" class="form-control" name="year" ngModel>
-</div>
-
-<div class="form-outline" style="width: 170px;"> 
-<label class="form-label" for="form2Example6">Sem</label>
-<input type="text" id="form2Example6" placeholder="sem" class="form-control" name="sem" ngModel>
-</div> -->
-
-<div class="form-outline" style="width: 220px;"> 
-<label class="form-label" for="form2Example6">Mobile No.</label>
-<input type="text" id="form2Example6" placeholder="mobileno" class="form-control" name="mobileno" ngModel>
-</div><br>
-
-<div class="form-outline" style="width: 250px;"> 
-    <!-- <small class="text-danger">{{msg}}</small><br> -->
-  <label class="form-label" for="form2Example7">Email address</label>
-  <input type="email" id="form2Example7" placeholder="abc@xyz.com" class="form-control" name="email" ngModel>
-  <!-- <div *ngIf="email.invalid && email.touched"><small class="text-danger">Enter Correct Email</small></div>  -->
-</div><br><br><br><br><br>
-
-<div class="form-outline mb-4">
-  <label class="form-label" for="form2Example8">Password</label>
-  <input type="password" required minlength="5" maxlength="16" id="form2Example8" placeholder="password" class="form-control" name="password" ngModel>
-  <!-- <div *ngIf="password.invalid && password.touched"><small class="text-danger">Password should not be blank</small></div>    -->
-</div><br><br><br><br><br><br>
-<button  class="button" type="submit" value="Update" (click)="updateLoginpage(data)" >Update </button><br>
-</form>
-</div><br><br>
-</div>
-<!-- </div> -->
-
-<div *ngIf="div4">
-<!-- <div class="operation"> -->
-    <div class="container" style="background-color:white; padding: 5px 5px 45px 5px; border-radius: 15px; width: 400px;">
-      <h2 style="text-align:center;color: red;">Delete Faculties</h2>
-      <form #data="ngForm" (ngSubmit)="deleteLoginpage(data)">
-      <div class="form-outline" style="width: 200px;"> 
-      <label class="form-label" >Id</label>
-      <input type="text"  placeholder="id" class="form-control" name="id" ngModel>
-      </div><br>
-      <button  class="button" type="submit" value="Delete" (click)="deleteLoginpage(data)" >Delete </button><br>
-      </form>
+<div class="main" style="margin-left: 240px;">
+  <h1 class="text-center" style="margin-left:200px;"><span>Electrical Engineering</span></h1><br><br>
+  <div class="row">
+    <div class="col-md-3">
+      <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white col-md-3">
+        <div class="position-sticky">
+          <div class="list-group list-group-flush mx-3 mt-4">
+            <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" (click)="div1Function()">
+              <i class="fas fa-users fa-fw me-3"></i><span>Faculties</span>
+            </a>
+            <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" (click)="div2Function()">
+              <i class="fas fa-user-plus fa-fw me-3"></i><span>Add</span>
+            </a>
+            <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" (click)="div3Function()">
+              <i class="fas fa-user-edit fa-fw me-3"></i><span>Update</span>
+            </a>
+            <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" (click)="div4Function()">
+              <i class="fas fa-user-times fa-fw me-3"></i><span>Delete</span>
+            </a>
+            <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" (click)="div5Function()">
+              <i class="fas fa-eye-slash fa-fw me-3"></i><span>Hide</span>
+            </a>
+          </div>
+        </div>
+      </nav>
     </div>
-<!-- </div> -->
+    <div class="col-md-9">
+
+      <div *ngIf="div1">
+        <div class="container">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title text-center">Faculties Data</h2>
+              <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Id</th>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Gender</th>
+                      <th>Designation</th>
+                      <th>Mobile No.</th>
+                      <th>Email address</th>
+                      <th>Action</th> <!-- Added column for Update button -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let l of loginpages">
+                      <td>{{l.id}}</td>
+                      <td>{{l.firstname}}</td>
+                      <td>{{l.lastname}}</td>
+                      <td>{{l.gender}}</td>
+                      <td>{{l.designation}}</td>
+                      <td>{{l.mobileno}}</td>
+                      <td>{{l.email}}</td>
+                      <td><button class="btn btn-primary" (click)="selectFacultyForUpdate(l)">Update</button></td> <!-- Update button -->
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div *ngIf="div2" class="container mt-4">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title text-center">Add Faculties</h2>
+            <form #insertdata="ngForm" (ngSubmit)="insertdetails(insertdata)">
+              <div class="mb-3">
+                <label for="form2Example1" class="form-label">Custom Identification Number</label>
+                <input type="text" id="form2Example1" placeholder="id" class="form-control" name="id" ngModel>
+              </div>
+      
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="form2Example2" class="form-label">First Name</label>
+                    <input type="text" id="form2Example2" placeholder="firstname" class="form-control" name="firstname"
+                      ngModel>
+                  </div>
+                </div>
+      
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="form2Example3" class="form-label">Last Name</label>
+                    <input type="text" id="form2Example3" placeholder="lastname" class="form-control" name="lastname" ngModel>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="mb-3">
+                <label for="form2Example4" class="form-label">Gender</label>
+                <input type="text" id="form2Example4" placeholder="gender" class="form-control" name="gender" ngModel>
+              </div>
+      
+              <div class="mb-3">
+                <label for="form2Example5" class="form-label">Designation</label>
+                <input type="text" id="form2Example5" placeholder="designation" class="form-control" name="designation"
+                  ngModel>
+              </div>
+      
+              <div class="mb-3">
+                <label for="form2Example6" class="form-label">Mobile No.</label>
+                <input type="text" id="form2Example6" placeholder="mobileno" class="form-control" maxlength="10" minlength="10" name="mobileno" required ngModel>
+              </div>
+      
+              <div class="mb-3">
+                <label for="form2Example7" class="form-label">Email address</label>
+                <input type="email" id="form2Example7" placeholder="abc@xyz.com" class="form-control" name="email" ngModel>
+              </div>
+      
+              <div class="mb-3">
+                <label for="form2Example8" class="form-label">Password</label>
+                <input type="password" required minlength="5" maxlength="16" id="form2Example8" placeholder="password"
+                  class="form-control" name="password" ngModel>
+              </div>
+      
+              <div class="text-center">
+                <button class="btn btn-primary" type="submit" value="Insert" (click)="insertdetails(insertdata)">Add</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+
+      <div *ngIf="div3" class="container mt-4">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title text-center">Update Faculty</h2>
+            <form #data="ngForm" (ngSubmit)="updateLoginpage(data)">
+              <div class="form-row">
+                <div class="col">
+                  <label for="form2Example1">Identification Number</label>
+                  <input type="text" id="form2Example1" class="form-control-plaintext" name="id" ngModel [(ngModel)]="selectedFaculty.id" readonly>
+                </div>
+                <div class="col">
+                  <label for="form2Example2">First Name</label>
+                  <input type="text" id="form2Example2" class="form-control" name="firstname" ngModel [(ngModel)]="selectedFaculty.firstname">
+                </div>
+                <div class="col">
+                  <label for="form2Example3">Last Name</label>
+                  <input type="text" id="form2Example3" class="form-control" name="lastname" ngModel [(ngModel)]="selectedFaculty.lastname">
+                </div>
+              </div>
+              <div class="col">
+                <div>
+                  <label for="form2Example4">Gender</label>
+                  <input type="text" id="form2Example4" class="form-control" name="gender" ngModel [(ngModel)]="selectedFaculty.gender">
+                </div>
+                <div>
+                  <label for="form2Example5">Designation</label>
+                  <input type="text" id="form2Example5" class="form-control" name="designation" ngModel [(ngModel)]="selectedFaculty.designation">
+                </div>
+              </div>
+              <div class="col">
+                <div>
+                  <label for="form2Example6">Mobile No.</label>
+                  <input type="text" id="form2Example6" class="form-control" name="mobileno" ngModel [(ngModel)]="selectedFaculty.mobileno">
+                </div>
+                <div>
+                  <label for="form2Example7">Email address</label>
+                  <input type="email" id="form2Example7" class="form-control" name="email" ngModel [(ngModel)]="selectedFaculty.email">
+                </div>
+              </div>
+              <div class="col">
+                <label for="form2Example8">Password</label>
+                <input type="password" required minlength="5" maxlength="16" id="form2Example8" class="form-control" name="password" ngModel [(ngModel)]="selectedFaculty.password" autocomplete="new-password">
+              </div>
+              <div class="text-center">
+                <button class="btn btn-primary bg-black" type="submit" value="Update">Update</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      
+
+      <div *ngIf="div4">
+        <!-- <div class="operation"> -->
+          <div class="container" style="background-color: white; padding: 20px; border-radius: 15px; width: 400px;">
+            <h2 style="text-align: center;">Delete Faculties</h2><br>
+            <form #data="ngForm" (ngSubmit)="deleteLoginpage(data)">
+              <div class="mb-3">
+                <label for="identificationNumber" class="form-label">Enter Identification number</label>
+                <input type="text" id="identificationNumber" placeholder="Identification number" class="form-control" name="id" ngModel required >
+                <div *ngIf="data.controls['id'].touched && data.controls['id'].errors?.['required']" class="text-danger">
+                  Identification number is required
+                </div>
+              </div>
+              <button class="btn btn-primary bg-black btn-lg" style="margin-left: 140px;" type="submit" [disabled]="!data.valid">Delete</button>
+            </form>
+          </div>
+          
+      </div>
+    </div>
+  </div>
 </div>
-
-</div>
-
-
-
-

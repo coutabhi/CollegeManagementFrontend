@@ -81,6 +81,7 @@ import { MesdashboardComponent } from './mesdashboard/mesdashboard.component';
 import { MesmarksheetComponent } from './mesmarksheet/mesmarksheet.component';
 import { MesnoticeComponent } from './mesnotice/mesnotice.component';
 import { MesfeesComponent } from './mesfees/mesfees.component';
+import { LibrarianComponent } from './librarian/librarian.component';
 
 @NgModule({
   declarations: [
@@ -161,7 +162,8 @@ import { MesfeesComponent } from './mesfees/mesfees.component';
     MesdashboardComponent,
     MesmarksheetComponent,
     MesnoticeComponent,
-    MesfeesComponent
+    MesfeesComponent,
+    LibrarianComponent
   ],
   imports: [
     BrowserModule,

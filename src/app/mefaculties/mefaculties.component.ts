@@ -12,6 +12,8 @@ export class MefacultiesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  selectedFaculty: any; 
+
   constructor(private is:InsertService,private ps1:InsertService,private ps:InsertService,private router:Router) {
 
     this.viewLoginpage();
@@ -79,6 +81,15 @@ export class MefacultiesComponent implements OnInit {
     this.div2=false;
     this.div1=false;
     this.div3=false;
+  }
+
+  selectFacultyForUpdate(faculty: any) {
+    this.selectedFaculty = faculty;
+    console.log(faculty);
+    console.log("this is the selected");
+    console.log(this.selectedFaculty)
+    this.div3Function(); 
+
   }
 
 }
