@@ -1,22 +1,33 @@
 <div class="container-xxl py-5">
-  <h1 style="text-align:center;"><span>Student Login</span></h1><br><br><br>
-  <div  style=" float:left; width: 50px;margin-right: 0px;">
-    <button  class="button" (click)="div1Function()">Mechanical Engg.</button>
+  <h1 class="text-center mb-5"><span>Student Login</span></h1>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <form>
+            <div class="mb-3">
+              <label for="branch" class="form-label">Select Branch</label>
+              <select id="branch" class="form-select" (change)="selectFunction($event)">
+                <option value="">Select Branch</option>
+                <option value="mechanical">Mechanical Engineering</option>
+                <option value="electronics">Electronics Engineering</option>
+                <option value="computer">Computer Engineering</option>
+              </select>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-    
-    <div  style=" float: left; width: 50px;margin-left:300px;">
-    <button  class="button" (click)="div2Function()">Electronics Engg.</button>
-    </div>
-    
-    <div style=" float: left; width: 50px;margin-left:600px;">
-    <button  class="button" (click)="div3Function()">Computer Engg.</button>
-    </div><br><br><br><br>
+  </div>
+</div>
+
+
     
     <!-- <div style=" float: left; width: 50px;margin-left:785px;">
     <button  class="button" (click)="div4Function()">Hide</button>
     </div><br><br><br><br> -->
 
-    <div *ngIf="div1">
+  <!--<div *ngIf="div1">
   <h2 style="text-align:center;"><span>M.E. Student Login</span></h2><br>
   <body style="padding-top: 0px;
       padding-right: 500px;
@@ -46,9 +57,46 @@
   </form>
     </div>
   </body>
+</div> --->
+
+<div *ngIf="div1">
+  <h2 style="text-align:center;"><span>M.E. Student Login</span></h2>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <form #loginform="ngForm" (ngSubmit)="loginUser1()">
+              <div class="mb-4">
+                <small class="text-danger">{{msg}}</small>
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" id="email" placeholder="example@xyz.com" class="form-control" name="email" [(ngModel)]="user.email" #email="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                <div *ngIf="email.invalid && email.touched" class="text-danger">Enter Correct Email</div>
+              </div>
+
+              <div class="mb-4">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" required minlength="5" maxlength="16" id="password" placeholder="min 5 letters" class="form-control" name="password" #password="ngModel" [(ngModel)]="user.password">
+                <div *ngIf="password.invalid && password.touched" class="text-danger">Password should not be blank</div>
+              </div>
+              <button [disabled]="loginform.form.invalid" class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+            </form>
+            <div class="text-center mt-3">
+              <p class="not">Not a member? <br>
+                <button (click)="goToPage('student-sign-up')" class="btn btn-link">
+                  Sign Up
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div *ngIf="div2">
+
+<!--<div *ngIf="div2">
   <h2 style="text-align:center;"><span>E.E. Student Login</span></h2><br>
   <body style="padding-top: 0px;
       padding-right: 500px;
@@ -78,9 +126,50 @@
   </form>
     </div>
   </body>
+</div> -->
+
+
+<div *ngIf="div2">
+  <h2 style="text-align:center;"><span>E.E. Student Login</span></h2>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <form #loginform="ngForm" (ngSubmit)="loginUser2()">
+              <div class="mb-4">
+                <small class="text-danger">{{msg}}</small><br>
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" id="email" placeholder="example@xyz.com" class="form-control" name="email" [(ngModel)]="user.email" #email="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                <div *ngIf="email.invalid && email.touched" class="text-danger">Enter Correct Email</div>
+              </div>
+
+              <div class="mb-4">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" required minlength="5" maxlength="16" id="password" placeholder="min 5 letters" class="form-control" name="password" #password="ngModel" [(ngModel)]="user.password">
+                <div *ngIf="password.invalid && password.touched" class="text-danger">Password should not be blank</div>
+              </div>
+              <button [disabled]="loginform.form.invalid" class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+            </form>
+            <div class="text-center mt-3">
+              <p class="not">Not a member? <br>
+                <button (click)="goToPage('student-sign-up')" class="btn btn-link">
+                  Sign Up
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div *ngIf="div3">
+
+
+
+
+<!--<div *ngIf="div3">
   <h2 style="text-align:center;"><span>C.E. Student Login</span></h2><br>
   <body style="padding-top: 0px;
       padding-right: 500px;
@@ -111,5 +200,41 @@
     </div>
   </body>
 </div>
-</div>
+</div> -->
 
+
+<div *ngIf="div3">
+  <h2 style="text-align:center;"><span>C.E. Student Login</span></h2>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <form #loginform="ngForm" (ngSubmit)="loginUser3()">
+              <div class="mb-4">
+                <small class="text-danger">{{msg}}</small><br>
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" id="email" placeholder="example@xyz.com" class="form-control" name="email" [(ngModel)]="user.email" #email="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                <div *ngIf="email.invalid && email.touched" class="text-danger">Enter Correct Email</div>
+              </div>
+
+              <div class="mb-4">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" required minlength="5" maxlength="16" id="password" placeholder="min 5 letters" class="form-control" name="password" #password="ngModel" [(ngModel)]="user.password">
+                <div *ngIf="password.invalid && password.touched" class="text-danger">Password should not be blank</div>
+              </div>
+              <button [disabled]="loginform.form.invalid" class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+            </form>
+            <div class="text-center mt-3">
+              <p class="not">Not a member? <br>
+                <button (click)="goToPage('student-sign-up')" class="btn btn-link">
+                  Sign Up
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

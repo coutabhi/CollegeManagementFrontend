@@ -9,6 +9,8 @@ import { InsertService } from '../insert.service';
 })
 export class AcourseComponent implements OnInit {
 
+  selectedBranch:any
+
   ngOnInit(): void {
   }
   constructor(private is:InsertService,private ps1:InsertService,private ps:InsertService,private router:Router) {
@@ -23,7 +25,7 @@ export class AcourseComponent implements OnInit {
   }
 
   
-  deleteLoginpage(data:any){
+  deleteBranch(data:any){
     this.ps.deleteBranch(data.value).subscribe();
     alert('You Have successfully deleted Branch');
     window.location.reload();
@@ -34,7 +36,7 @@ export class AcourseComponent implements OnInit {
     this.is.viewBranch().subscribe((resp1:any)=>{this.loginpages=resp1;});
   }
  
-    div1:boolean=false;
+    div1:boolean=true;
     div2:boolean=false;
     div3:boolean=false;
 
@@ -60,6 +62,11 @@ export class AcourseComponent implements OnInit {
       this.div2=false;
       this.div1=false;
       this.div3=false;
+  }
+
+  selectBranchForUpdate(branch: any) {
+    this.selectedBranch = branch;
+    this.div3Function(); 
   }
 
 }

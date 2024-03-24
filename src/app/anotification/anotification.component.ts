@@ -47,7 +47,7 @@ export class AnotificationComponent implements OnInit {
     this.is.viewFees().subscribe((resp1:any)=>{this.loginpages5=resp1;});
   }
   
-    div1:boolean=false;
+    div1:boolean=true;
     div2:boolean=false;
     div3:boolean=false;
     div4:boolean=false;
@@ -92,6 +92,7 @@ export class AnotificationComponent implements OnInit {
     this.div4=false;
     this.div5=true;
   }
+
 
 
 }

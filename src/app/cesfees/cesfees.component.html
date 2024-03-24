@@ -1,90 +1,76 @@
 <app-cestudentpanel></app-cestudentpanel>
 
-<div class="main">
-    <h1 style="text-align:center;"><span>College Fees</span></h1><br>
-<div class="container" style="background-color:white; padding: 15px 15px 60px 15px; border-radius: 15px;width: 800px;">
-    <!-- <h2 style="text-align:center;color: red;"></h2><br> -->
-  <form #insertdata="ngForm" (ngSubmit)="insertdetails(insertdata)">
-  
-    <div class="form-outline" style="width: 400px;"> 
-        <h5 style="text-align:center;color: red;"> *College Total Fees- 80,000</h5>
+<div class="container py-5">
+  <h1 class="text-center mb-5">College Fees Payment</h1>
+  <div class="card mx-auto" style="max-width: 600px;">
+    <div class="card-body">
+      <form #insertdata="ngForm" (ngSubmit)="insertdetails(insertdata)">
+        <div class="mb-4">
+        <div class="mb-3">
+          <label for="rollNo" class="form-label">Roll No.</label>
+          <input type="text" id="rollNo" placeholder="Enter Roll No." class="form-control" name="id" ngModel required>
+        </div>
+        <div class="row mb-3">
+          <div class="col">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" id="firstName" placeholder="Enter First Name" class="form-control" name="firstname" ngModel required>
+          </div>
+          <div class="col">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" id="lastName" placeholder="Enter Last Name" class="form-control" name="lastname" ngModel required>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col">
+            <label for="branch" class="form-label">Branch</label>
+            <select id="branch" class="form-select" name="branch" ngModel required>
+              <option value="Mechanical Engineering">
+                Mechanical Engineering
+              </option>
+              <option value="Electrical Engineering">
+                Electrical Engineering
+              </option>
+              <option value="Computer Engineering">
+                Computer Engineering
+              </option>
+            </select> 
+          </div>
+          <div class="col">
+            <label for="year" class="form-label">Year</label>
+            <input type="text" id="year" placeholder="Enter Year" class="form-control" name="year" ngModel required>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col">
+            <label for="sem" class="form-label">Semester</label>
+            <input type="text" id="sem" placeholder="Enter Semester" class="form-control" name="sem" ngModel required>
+          </div>
+          <div class="col">
+            <label for="mobileNo" class="form-label">Mobile No.</label>
+            <input type="text" id="mobileNo" placeholder="Enter Mobile No." class="form-control" name="mobileno" ngModel required>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="paymentDate" class="form-label">Payment Date</label>
+          <input type="date" id="paymentDate" class="form-control" name="date" ngModel required>
+        </div>
+        <div class="mb-3">
+          <label for="paymentMode" class="form-label">Payment Mode</label>
+          <input type="text" id="paymentMode" placeholder="Enter Payment Mode" class="form-control" name="pmode" ngModel required>
+        </div>
+        <div class="mb-3">
+          <label for="collegeAccount" class="form-label">College Account No.</label>
+          <input type="text" id="collegeAccount" placeholder="Enter College Account No." class="form-control" name="accno" ngModel required>
+        </div>
+        <div class="mb-3">
+          <label for="fees" class="form-label">Fees Want to Pay</label>
+          <input type="text" id="fees" placeholder="Enter Fees Amount" class="form-control" name="fees" ngModel required>
+        </div>
+        <div class="col-md-12 text-center">
+          <button class="w-100 btn btn-primary btn-lg" type="submit" [disabled]="!insertdata.valid">
+            Pay
+          </button>
+        </div>
+      
     </div>
 
-    <div class="form-outline" > 
-        <h5 style="text-align:center;color: red;"> *College Account No.-AB1002</h5>
-    </div><br><br>
-
-    <div class="form-outline" style="width: 100px;"> 
-    <label class="form-label" for="form2Example1">Roll No.</label>
-    <input type="text" id="form2Example1" placeholder="rollno" class="form-control" name="id" ngModel>
-  </div>
-  
-  <div class="form-outline" style="width: 200px;"> 
-  <label class="form-label" for="form2Example2" >First Name</label>
-  <input type="text" id="form2Example2" placeholder="firstname" class="form-control" name="firstname" ngModel>
-  </div>
-  
-  <div class="form-outline" > 
-  <label class="form-label" for="form2Example3">Last Name</label>
-  <input type="text" id="form2Example3" placeholder="lastname" class="form-control" name="lastname" ngModel>
-  </div><br><br><br><br>
-  
-  <!-- <div class="form-outline" style="width: 170px;"> 
-    <label class="form-label" for="form2Example4">Gender</label>
-    <input type="text" id="form2Example4" placeholder="gender" class="form-control" name="gender" ngModel>
-  </div> -->
-  
-  <div class="form-outline" style="width: 130px;"> 
-  <label class="form-label" for="form2Example4">Branch</label>
-  <input type="text" id="form2Example4" placeholder="branch" class="form-control" name="branch" ngModel>
-  </div>
-  
-  <div class="form-outline" style="width: 170px;"> 
-  <label class="form-label" for="form2Example5">Year</label>
-  <input type="text" id="form2Example5" placeholder="year" class="form-control" name="year" ngModel>
-  </div>
-  
-  <div class="form-outline" style="width: 170px;"> 
-    <label class="form-label" for="form2Example6">Sem</label>
-    <input type="text" id="form2Example6" placeholder="sem" class="form-control" name="sem" ngModel>
-    </div>
-  
-  <div class="form-outline" style="width: 220px;"> 
-  <label class="form-label" for="form2Example7">Mobile No.</label>
-  <input type="text" id="form2Example7" placeholder="mobileno" class="form-control" name="mobileno" ngModel>
-  </div><br>
-  
-    <!-- <div class="form-outline" style="width: 250px;"> 
-      <label class="form-label" for="form2Example8">Email address</label>
-      <input type="email" id="form2Example8" placeholder="abc@xyz.com" class="form-control" name="email" ngModel>
-     
-    </div><br><br><br><br><br> -->
-  
-    <div class="form-outline mb-4">
-        <label class="form-label" for="form2Example8">Payment Date</label>
-        <input type="date" id="form2Example8" placeholder="dd-mm-yyyy" class="form-control" name="date" ngModel>
-        <!-- <div *ngIf="password.invalid && password.touched"><small class="text-danger">Password should not be blank</small></div>    -->
-      </div><br>
-
-    <div class="form-outline mb-4">
-      <label class="form-label" for="form2Example9">Payment Mode</label>
-      <input type="text" id="form2Example9" placeholder="phonepay/other" class="form-control" name="pmode" ngModel>
-      <!-- <div *ngIf="password.invalid && password.touched"><small class="text-danger">Password should not be blank</small></div>    -->
-    </div><br>
-
-    <div class="form-outline mb-4">
-        <label class="form-label" for="form2Example10">College Account No.</label>
-        <input type="text" id="form2Example10" placeholder="Account No." class="form-control" name="accno" ngModel>
-        <!-- <div *ngIf="password.invalid && password.touched"><small class="text-danger">Password should not be blank</small></div>    -->
-    </div><br>
-
-    <div class="form-outline mb-4">
-        <label class="form-label" for="form2Example11">Fees Want to Pay</label>
-        <input type="text" id="form2Example11" placeholder="fees" class="form-control" name="fees" ngModel>
-        <!-- <div *ngIf="password.invalid && password.touched"><small class="text-danger">Password should not be blank</small></div>    -->
-    </div><br><br><br><br><br><br><br><br>
-
-    <button  class="button" type="submit" value="Insert" (click)="insertdetails(insertdata)" >Pay</button><br>
-  </form>
-    </div><br><br>
-</div>

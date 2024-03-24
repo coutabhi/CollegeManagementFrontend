@@ -59,6 +59,7 @@ import { StudentComponent } from './student/student.component';
 import { StudentpanelComponent } from './studentpanel/studentpanel.component';
 import { TopRecComponent } from './top-rec/top-rec.component';
 import { TPComponent } from './upcoming-news/tp.component';
+import { LibrarianComponent } from './librarian/librarian.component';
 
 
 const routes: Routes = [
@@ -73,6 +74,7 @@ const routes: Routes = [
   {path:'camp-sel', component : CampSelComponent},
   {path:'top-rec', component : TopRecComponent},
   {path:'admin', component : AdminComponent,data: { title:'', navigation: true,footer: true}},
+  {path:'librarian', component : LibrarianComponent,data: { title:'', navigation: true,footer: true}},
   {path:'faculty', component : FacultyComponent,data: { title:'', navigation: true,footer: true}},
   {path:'student', component : StudentComponent,data: { title:'', navigation: true,footer: true}},
   {path:'student-sign-up', component : StudentSignUpComponent},

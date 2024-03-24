@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { InsertService } from '../insert.service';
+import { UserComponent } from '../user/user.component';
 
 @Component({
   selector: 'app-student-sign-up',
@@ -8,6 +9,14 @@ import { InsertService } from '../insert.service';
   styleUrls: ['./student-sign-up.component.css']
 })
 export class StudentSignUpComponent implements OnInit {
+  msg:String="";
+  user: UserComponent= new UserComponent();
+togglePasswordVisibility() {
+
+}
+selectFunction($event: Event) {
+throw new Error('Method not implemented.');
+}
   
   constructor(private is:InsertService,private router:Router) { }
 
@@ -35,6 +44,25 @@ export class StudentSignUpComponent implements OnInit {
         this.div2=false;
         this.div1=false;
     }
+
+
+    selectFunctions(event: any) {
+      const selectedValue = event.target.value;
+      switch (selectedValue) {
+        case 'mechanical':
+          this.div1Function();
+          break;
+        case 'electronics':
+          this.div2Function();
+          break;
+        case 'computer':
+          this.div3Function();
+          break;
+        default:
+          console.log("Invalid selection");
+      }
+    }
+  
   
   insertdetails1(insert:any){
     this.is.addStudent(insert.value).subscribe();
