@@ -1,5 +1,5 @@
 body {
-  background-color: #DFF5FF !important;
+  background-color: rgb(44, 44, 75);
 }
 @media (min-width: 991.98px) {
   main {
@@ -40,4 +40,23 @@ body {
 .main {
   margin-left: 240px;
   padding: 0px 0px;
+}
+.navbar-brand h3 {
+  height: 90px;
+  padding-top: 30px;
+  padding-bottom: 90px;
+  color: #b9f7be;
+ 
+  font-size: 20px; 
+  font-weight: bold; 
+  text-align: center; 
+  
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 65%;
+  
 }
