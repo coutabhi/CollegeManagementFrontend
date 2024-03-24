@@ -12,6 +12,8 @@ export class EefacultiesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  selectedFaculty: any; 
+
   constructor(private is:InsertService,private ps1:InsertService,private ps:InsertService,private router:Router) {
 
     this.viewLoginpage();
@@ -41,7 +43,7 @@ export class EefacultiesComponent implements OnInit {
     this.is.viewEEFaculties().subscribe((resp1:any)=>{this.loginpages=resp1;});
   }
  
-    div1:boolean=false;
+    div1:boolean=true;
     div2:boolean=false;
     div3:boolean=false;
     div4:boolean=false;
@@ -79,6 +81,15 @@ export class EefacultiesComponent implements OnInit {
     this.div2=false;
     this.div1=false;
     this.div3=false;
+  }
+
+  selectFacultyForUpdate(faculty: any) {
+    this.selectedFaculty = faculty;
+    console.log(faculty);
+    console.log("this is the selected");
+    console.log(this.selectedFaculty)
+    this.div3Function(); 
+
   }
 
 
