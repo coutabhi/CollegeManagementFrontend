@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Add your custom styles here */
+        .navbar-brand h3 {
+            margin: 0;
+            padding: 20px 0;
+            font-size: 1.5rem;
+        }
+        .navbar-nav {
+            align-items: center;
+        }
+        .nav-item {
+            margin-left: 10px;
+        }
+        .dropdown-menu {
+            min-width: 150px;
+        }
+        .dropdown-menu a {
+            padding: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Navigation -->
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-light">
+        <div class="position-sticky">
+            <div class="list-group list-group-flush mx-3 mt-4">
+                <img src="/assets/library-logo.jpg" height="140" width="" alt="" loading="" class="center" /> <br>
+                <a class="list-group-item list-group-item-action py-2 ripple text-white bg-black" aria-current="page" routerLink="/librarian" routerLinkActive="active" href="#">
+                    <i class="fas fa-lock fa-fw me-3"></i><span>Logout</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Navbar -->
+    <nav id="main-navbar" class="main navbar navbar-expand-sm navbar-light fixed-top" style="background-color: #DFF5FF;">
+        <div class="container-fluid"> 
+            <a class="navbar-brand" href="#">
+                <h3>Welcome to Librarian Panel</h3>
+            </a>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                        <img src="/assets/admin-logo.jpg" class="rounded-circle" height="32" alt="" loading="lazy">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                        <li>
+                            <a class="dropdown-item" aria-current="page" routerLink="/librarian" routerLinkActive="active" href="#">Logout</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--Main layout-->
+    <main>
+    </main>
+</body>
+</html>

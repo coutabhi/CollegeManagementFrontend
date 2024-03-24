@@ -60,9 +60,14 @@ import { StudentpanelComponent } from './studentpanel/studentpanel.component';
 import { TopRecComponent } from './top-rec/top-rec.component';
 import { TPComponent } from './upcoming-news/tp.component';
 import { LibrarianComponent } from './librarian/librarian.component';
-
+import { AdminOpsComponent } from './admin/admin-ops/admin-ops.component';
+import { LibPanelComponent } from './librarian/lib-panel/lib-panel.component';
+import { BookComponent } from './book/book.component';
+import { AddBookComponent } from './book/add-book/add-book.component';
+import { LibDashComponent } from './librarian/lib-dash/lib-dash.component';
 
 const routes: Routes = [
+  {path:'', component : HomeComponent},
   {path:'home', component : HomeComponent},
   {path:'about', component : AboutComponent},
   {path:'sign-up', component : SignUpComponent},
@@ -74,7 +79,10 @@ const routes: Routes = [
   {path:'camp-sel', component : CampSelComponent},
   {path:'top-rec', component : TopRecComponent},
   {path:'admin', component : AdminComponent,data: { title:'', navigation: true,footer: true}},
+  {path:'addadmin', component : AdminOpsComponent,data: { title:'', navigation: false,footer: false}},
   {path:'librarian', component : LibrarianComponent,data: { title:'', navigation: true,footer: true}},
+  {path:'libdash', component : LibDashComponent,data: { title:'', navigation: false,footer: false}},
+  {path:'addbook', component : AddBookComponent,data: { title:'', navigation: false,footer: false}},
   {path:'faculty', component : FacultyComponent,data: { title:'', navigation: true,footer: true}},
   {path:'student', component : StudentComponent,data: { title:'', navigation: true,footer: true}},
   {path:'student-sign-up', component : StudentSignUpComponent},

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { UserComponent } from '../user/user.component';
 import { Router } from '@angular/router';
 import { InsertService } from '../insert.service';
 import { AuthService } from '../auth.service';
+import { UserComponent } from '../user/user.component';
 
 @Component({
   selector: 'app-librarian',
@@ -12,37 +12,35 @@ import { AuthService } from '../auth.service';
 export class LibrarianComponent implements OnInit {
 
 
-  msg:String="";
-  admin: UserComponent= new UserComponent();
+  msg: String = "";
+  librarian: UserComponent = new UserComponent();
 
-  constructor(private router:Router,private ls:InsertService,private authService:AuthService) { }
+  constructor(private router: Router, private ls: InsertService, private authService: AuthService) { }
 
   ngOnInit(): void {
-   
+
   }
 
-  goToAdmin(adminpanel:String){
+  goToAdmin(adminpanel: String) {
     this.router.navigate(['${adminpanel}']);
   }
 
-  loginData(logindata:any){
-    this.ls.loginservice2(logindata.value).subscribe();
+  loginData(logindata: any) {
+    this.ls.loginservice3Staff(logindata.value).subscribe();
   }
 
-  loginAdmin(){
-    console.log(this.admin)
-    this.ls.loginAdminFromRemote(this.admin).subscribe(
-      (       _data: any)=>{
+  loginLibrarian() {
+    this.ls.loginFacultyFromRemoteStaff(this.librarian).subscribe(
+      _data => {
         alert("logged in successfully");
-        console.log("Successfull");
-        this.router.navigateByUrl('/adminpanel');
+        this.router.navigateByUrl('/libdash');
       },
-      (      _error: any)=>{
-        this.msg='Please recheck your password and emailid';
+      _error => {
+        this.msg = 'Please recheck your password and emailid';
         console.log("Error");
       }
     )
   }
- 
+
 
 }

@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { InsertService } from '../insert.service';
+import { InsertService } from 'src/app/insert.service';
 
 @Component({
-  selector: 'app-astaff',
-  templateUrl: './astaff.component.html',
-  styleUrls: ['./astaff.component.css']
+  selector: 'app-lib-dash',
+  templateUrl: './lib-dash.component.html',
+  styleUrls: ['./lib-dash.component.css']
 })
-export class AstaffComponent implements OnInit {
-
-  selectedLibrarian:any;
+export class LibDashComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  selectedFaculty: any; 
 
   constructor(private is:InsertService,private ps1:InsertService,private ps:InsertService,private router:Router) {
 
@@ -20,27 +20,27 @@ export class AstaffComponent implements OnInit {
    }
 
   insertdetails(insert:any){
-    this.is.addStaff(insert.value).subscribe();
-    alert('You Have successfully added staff data');
+    this.is.addMEFaculties(insert.value).subscribe();
+    alert('You Have successfully added faculty data');
     window.location.reload();
   }
 
   loginpage:any;
   updateLoginpage(data:any){
-    this.ps1.updateStaff(data.value).subscribe();
-    alert('You Have successfully updated staff data');
+    this.ps1.updateMEFaculties(data.value).subscribe();
+    alert('You Have successfully updated faculty data');
     window.location.reload();
   }
 
   deleteLoginpage(data:any){
-    this.ps.deleteStaff(data.value).subscribe();
-    alert('You Have successfully deleted staff data');
+    this.ps.deleteMEFaculties(data.value).subscribe();
+    alert('You Have successfully deleted faculty data');
     window.location.reload();
   }
 
   loginpages:any;
   viewLoginpage(){
-    this.is.viewStaff().subscribe((resp1:any)=>{this.loginpages=resp1;});
+    this.is.viewMEFaculties().subscribe((resp1:any)=>{this.loginpages=resp1;});
   }
  
     div1:boolean=true;
@@ -83,8 +83,13 @@ export class AstaffComponent implements OnInit {
     this.div3=false;
   }
 
-  selectLibrarianForUpdate(librarian: any) {
-    this.selectedLibrarian = librarian;
+  selectFacultyForUpdate(faculty: any) {
+    this.selectedFaculty = faculty;
+    console.log(faculty);
+    console.log("this is the selected");
+    console.log(this.selectedFaculty)
     this.div3Function(); 
+
   }
+
 }

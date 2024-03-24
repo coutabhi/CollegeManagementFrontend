@@ -1,46 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { InsertService } from '../insert.service';
+import { InsertService } from 'src/app/insert.service';
 
 @Component({
-  selector: 'app-astaff',
-  templateUrl: './astaff.component.html',
-  styleUrls: ['./astaff.component.css']
+  selector: 'app-admin-ops',
+  templateUrl: './admin-ops.component.html',
+  styleUrls: ['./admin-ops.component.css']
 })
-export class AstaffComponent implements OnInit {
-
-  selectedLibrarian:any;
+export class AdminOpsComponent implements OnInit {
 
   ngOnInit(): void {
   }
 
-  constructor(private is:InsertService,private ps1:InsertService,private ps:InsertService,private router:Router) {
+  selectedAdmin: any; 
 
+  constructor(private is:InsertService,private ps1:InsertService,private ps:InsertService,private router:Router) {
     this.viewLoginpage();
    }
 
-  insertdetails(insert:any){
-    this.is.addStaff(insert.value).subscribe();
-    alert('You Have successfully added staff data');
-    window.location.reload();
-  }
-
   loginpage:any;
+
   updateLoginpage(data:any){
-    this.ps1.updateStaff(data.value).subscribe();
-    alert('You Have successfully updated staff data');
+    this.ps1.updateAdmin(data.value).subscribe();
+    alert('You Have successfully updated faculty data');
     window.location.reload();
   }
 
   deleteLoginpage(data:any){
-    this.ps.deleteStaff(data.value).subscribe();
-    alert('You Have successfully deleted staff data');
+    this.ps.deleteAdmin(data.value).subscribe();
+    alert('You Have successfully deleted faculty data');
     window.location.reload();
   }
 
   loginpages:any;
   viewLoginpage(){
-    this.is.viewStaff().subscribe((resp1:any)=>{this.loginpages=resp1;});
+    this.is.viewAllAdmin().subscribe((resp1:any)=>{this.loginpages=resp1;});
   }
  
     div1:boolean=true;
@@ -83,8 +77,9 @@ export class AstaffComponent implements OnInit {
     this.div3=false;
   }
 
-  selectLibrarianForUpdate(librarian: any) {
-    this.selectedLibrarian = librarian;
+  selectFacultyForUpdate(admin: any) {
+    this.selectedAdmin = admin;
     this.div3Function(); 
   }
+
 }

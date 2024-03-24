@@ -82,6 +82,12 @@ import { MesmarksheetComponent } from './mesmarksheet/mesmarksheet.component';
 import { MesnoticeComponent } from './mesnotice/mesnotice.component';
 import { MesfeesComponent } from './mesfees/mesfees.component';
 import { LibrarianComponent } from './librarian/librarian.component';
+import { AdminAddComponent } from './admin/admin-add/admin-add.component';
+import { AdminOpsComponent } from './admin/admin-ops/admin-ops.component';
+import { LibPanelComponent } from './librarian/lib-panel/lib-panel.component';
+import { BookComponent } from './book/book.component';
+import { AddBookComponent } from './book/add-book/add-book.component';
+import { LibDashComponent } from './librarian/lib-dash/lib-dash.component';
 
 @NgModule({
   declarations: [
@@ -163,7 +169,13 @@ import { LibrarianComponent } from './librarian/librarian.component';
     MesmarksheetComponent,
     MesnoticeComponent,
     MesfeesComponent,
-    LibrarianComponent
+    LibrarianComponent,
+    AdminAddComponent,
+    AdminOpsComponent,
+    LibPanelComponent,
+    BookComponent,
+    AddBookComponent,
+    LibDashComponent,
   ],
   imports: [
     BrowserModule,
