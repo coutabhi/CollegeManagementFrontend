@@ -70,217 +70,453 @@
       </div>
     </div>
   </section> -->
-    
-  <div class="container-xxl py-5">
 
-    <!-- <div class="main"> -->
-      <h1 style="text-align:center;"><span>Student SignUp</span></h1><br><br><br>
-  
-  <div  style=" float:left; width: 50px;margin-right: 0px;">
-  <button  class="button" (click)="div1Function()">Mechanical Engg.</button>
-  </div>
-  
-  <div  style=" float: left; width: 50px;margin-left:300px;">
-  <button  class="button" (click)="div2Function()">Electronics Engg.</button>
-  </div>
-  
-  <div style=" float: left; width: 50px;margin-left:600px;">
-  <button  class="button" (click)="div3Function()">Computer Engg.</button>
-  </div><br><br><br><br>
-  
-  <!-- <div style=" float: left; width: 50px;margin-left:785px;">
-  <button  class="button" (click)="div4Function()">Hide</button>
-  </div><br><br><br><br> -->
-
-  <div *ngIf="div1">
-    <h2 style="text-align:center;"><span>M.E. Students SignUp</span></h2> <br>
-    <div class="container" style="background-color:white; padding: 15px 15px 60px 15px; border-radius: 15px;width: 600px;">
-      <!-- <h2 style="text-align:center;color: red;">Add Students</h2><br> -->
-    <form #insertdata="ngForm" (ngSubmit)="insertdetails1(insertdata)">
-    
-      <div class="form-outline" style="width: 100px;"> 
-      <label class="form-label" for="form2Example1">Roll No.</label>
-      <input type="text" id="form2Example1" placeholder="rollno" class="form-control" name="id" ngModel>
-    </div>
-    
-    <div class="form-outline" style="width: 200px;"> 
-    <label class="form-label" for="form2Example2" >First Name</label>
-    <input type="text" id="form2Example2" placeholder="firstname" class="form-control" name="firstname" ngModel>
-    </div>
-    
-    <div class="form-outline" > 
-    <label class="form-label" for="form2Example3">Last Name</label>
-    <input type="text" id="form2Example3" placeholder="lastname" class="form-control" name="lastname" ngModel>
-    </div><br><br><br><br>
-    
-    <div class="form-outline" style="width: 170px;"> 
-      <label class="form-label" for="form2Example4">Gender</label>
-      <input type="text" id="form2Example4" placeholder="gender" class="form-control" name="gender" ngModel>
-    </div>
-    
-    <div class="form-outline" style="width: 170px;"> 
-    <label class="form-label" for="form2Example5">Branch</label>
-    <input type="text" id="form2Example5" placeholder="branch" class="form-control" name="branch" ngModel>
-    </div>
-    
-    <div class="form-outline" style="width: 170px;"> 
-    <label class="form-label" for="form2Example6">Year</label>
-    <input type="text" id="form2Example6" placeholder="year" class="form-control" name="year" ngModel>
-    </div>
-    
-    <div class="form-outline" style="width: 170px;"> 
-      <label class="form-label" for="form2Example5">Sem</label>
-      <input type="text" id="form2Example5" placeholder="sem" class="form-control" name="sem" ngModel>
+<div class="container-xxl py-5">
+  <h1 class="text-center mb-5"><span>Student SignUp</span></h1>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <form>
+            <div class="mb-3">
+              <label for="branch" class="form-label">Select Branch</label>
+              <select
+                id="branch"
+                class="form-select"
+                (change)="selectFunctions($event)"
+              >
+                <option value="">Select Branch</option>
+                <option value="mechanical">Mechanical Engineering</option>
+                <option value="electronics">Electronics Engineering</option>
+                <option value="computer">Computer Engineering</option>
+              </select>
+            </div>
+          </form>
+        </div>
       </div>
-    
-    <div class="form-outline" style="width: 220px;"> 
-    <label class="form-label" for="form2Example7">Mobile No.</label>
-    <input type="text" id="form2Example7" placeholder="mobileno" class="form-control" name="mobileno" ngModel>
-    </div><br>
-    
-      <div class="form-outline" style="width: 250px;"> 
-          <!-- <small class="text-danger">{{msg}}</small><br> -->
-        <label class="form-label" for="form2Example8">Email address</label>
-        <input type="email" id="form2Example8" placeholder="abc@xyz.com" class="form-control" name="email" ngModel>
-        <!-- <div *ngIf="email.invalid && email.touched"><small class="text-danger">Enter Correct Email</small></div>  -->
-      </div><br><br><br><br><br>
-    
-      <div class="form-outline mb-4">
-        <label class="form-label" for="form2Example9">Password</label>
-        <input type="password" required minlength="5" maxlength="16" id="form2Example9" placeholder="password" class="form-control" name="password" ngModel>
-        <!-- <div *ngIf="password.invalid && password.touched"><small class="text-danger">Password should not be blank</small></div>    -->
-      </div><br><br><br><br><br><br>
-      <button  class="button" type="submit" value="Insert" (click)="insertdetails1(insertdata)" >Submit</button><br>
-    </form>
-      </div><br><br>
+    </div>
   </div>
+</div>
 
-
-  <div *ngIf="div2">
-    <h2 style="text-align:center;"><span>E.E. Students SignUp</span></h2><br> 
-    <div class="container" style="background-color:white; padding: 15px 15px 60px 15px; border-radius: 15px;width: 600px;">
-      <!-- <h2 style="text-align:center;color: red;">Add Students</h2><br> -->
-    <form #insertdata="ngForm" (ngSubmit)="insertdetails2(insertdata)">
-    
-      <div class="form-outline" style="width: 100px;"> 
-      <label class="form-label" for="form2Example1">Roll No.</label>
-      <input type="text" id="form2Example1" placeholder="rollno" class="form-control" name="id" ngModel>
-    </div>
-    
-    <div class="form-outline" style="width: 200px;"> 
-    <label class="form-label" for="form2Example2" >First Name</label>
-    <input type="text" id="form2Example2" placeholder="firstname" class="form-control" name="firstname" ngModel>
-    </div>
-    
-    <div class="form-outline" > 
-    <label class="form-label" for="form2Example3">Last Name</label>
-    <input type="text" id="form2Example3" placeholder="lastname" class="form-control" name="lastname" ngModel>
-    </div><br><br><br><br>
-    
-    <div class="form-outline" style="width: 170px;"> 
-      <label class="form-label" for="form2Example4">Gender</label>
-      <input type="text" id="form2Example4" placeholder="gender" class="form-control" name="gender" ngModel>
-    </div>
-    
-    <div class="form-outline" style="width: 170px;"> 
-    <label class="form-label" for="form2Example5">Branch</label>
-    <input type="text" id="form2Example5" placeholder="branch" class="form-control" name="branch" ngModel>
-    </div>
-    
-    <div class="form-outline" style="width: 170px;"> 
-    <label class="form-label" for="form2Example6">Year</label>
-    <input type="text" id="form2Example6" placeholder="year" class="form-control" name="year" ngModel>
-    </div>
-    
-    <div class="form-outline" style="width: 170px;"> 
-      <label class="form-label" for="form2Example5">Sem</label>
-      <input type="text" id="form2Example5" placeholder="sem" class="form-control" name="sem" ngModel>
+<!--New M.E ADD-->
+<div *ngIf="div1">
+  <h2 style="text-align: center"><span>M.E. Students SignUp</span></h2>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <form #insertdata="ngForm" (ngSubmit)="insertdetails1(insertdata)">
+              <div class="mb-3">
+                <label for="id" class="form-label">Roll No.</label>
+                <input
+                  type="number"
+                  id="id"
+                  placeholder="Roll No."
+                  class="form-control"
+                  name="id"
+                  ngModel
+                  required
+                />
+              </div>
+              <!-- Add required attribute to each input field -->
+              <div class="mb-3">
+                <label for="firstname" class="form-label">First Name</label>
+                <input
+                  type="text"
+                  id="firstname"
+                  placeholder="First Name"
+                  class="form-control"
+                  name="firstname"
+                  ngModel
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="lastname" class="form-label">Last Name</label>
+                <input
+                  type="text"
+                  id="lastname"
+                  placeholder="Last Name"
+                  class="form-control"
+                  name="lastname"
+                  ngModel
+                  required
+                />
+              </div>
+              <div class="row mb-3">
+                <div class="col">
+                  <label for="gender" class="form-label">Gender</label>
+                  <select id="gender" class="form-select" name="gender" ngModel required>
+                    <option value="" disabled selected>Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                </div>
+                <div class="col">
+                  <label for="branch" class="form-label">Branch</label>
+                  <select id="branch" class="form-select" name="branch" ngModel required>
+                    <option value="" disabled selected>Select Branch</option>
+                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                    <option value="Electrical Engineering">Electrical Engineering</option>
+                    <option value="Computer Engineering">Computer Engineering</option>
+                  </select> 
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col">
+                  <label for="year" class="form-label">Year</label>
+                  <input
+                    type="number"
+                    id="year"
+                    placeholder="Year"
+                    class="form-control"
+                    name="year"
+                    ngModel
+                    required
+                  />
+                </div>
+                <div class="col">
+                  <label for="sem" class="form-label">Semester</label>
+                  <input
+                    type="number"
+                    id="sem"
+                    placeholder="Semester"
+                    class="form-control"
+                    name="sem"
+                    ngModel
+                    required
+                  />
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="mobileno" class="form-label">Mobile No.</label>
+                <input
+                  type="number"
+                  id="mobileno"
+                  placeholder="Mobile No."
+                  class="form-control"
+                  name="mobileno"
+                  ngModel
+                  required
+                />
+              </div>
+              <div class="mb-4">
+                <small class="text-danger">{{msg}}</small><br>
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" id="email" placeholder="example@xyz.com" class="form-control" name="email" [(ngModel)]="user.email" #email="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                <div *ngIf="email.invalid && email.touched" class="text-danger">Enter a Valid Email</div>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input
+                  type="password"
+                  required
+                  minlength="5"
+                  maxlength="16"
+                  id="password"
+                  placeholder="Password"
+                  class="form-control"
+                  name="password"
+                  ngModel
+                  required
+                />
+              </div>
+              <!-- Disable the button if the form is invalid -->
+              <div class="col-md-12 text-center">
+                <button class="w-100 btn btn-primary btn-lg" type="submit" [disabled]="!insertdata.valid">
+                  SignUp
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-    
-    <div class="form-outline" style="width: 220px;"> 
-    <label class="form-label" for="form2Example7">Mobile No.</label>
-    <input type="text" id="form2Example7" placeholder="mobileno" class="form-control" name="mobileno" ngModel>
-    </div><br>
-    
-      <div class="form-outline" style="width: 250px;"> 
-          <!-- <small class="text-danger">{{msg}}</small><br> -->
-        <label class="form-label" for="form2Example8">Email address</label>
-        <input type="email" id="form2Example8" placeholder="abc@xyz.com" class="form-control" name="email" ngModel>
-        <!-- <div *ngIf="email.invalid && email.touched"><small class="text-danger">Enter Correct Email</small></div>  -->
-      </div><br><br><br><br><br>
-    
-      <div class="form-outline mb-4">
-        <label class="form-label" for="form2Example9">Password</label>
-        <input type="password" required minlength="5" maxlength="16" id="form2Example9" placeholder="password" class="form-control" name="password" ngModel>
-        <!-- <div *ngIf="password.invalid && password.touched"><small class="text-danger">Password should not be blank</small></div>    -->
-      </div><br><br><br><br><br><br>
-      <button  class="button" type="submit" value="Insert" (click)="insertdetails2(insertdata)" >Submit</button><br>
-    </form>
-      </div><br><br>
+    </div>
   </div>
+</div>
 
 
-  <div *ngIf="div3">
-    <h2 style="text-align:center;"><span>C.E. Students SignUp</span></h2> <br>
-    <div class="container" style="background-color:white; padding: 15px 15px 60px 15px; border-radius: 15px;width: 600px;">
-      <!-- <h2 style="text-align:center;color: red;">Add Students</h2><br> -->
-    <form #insertdata="ngForm" (ngSubmit)="insertdetails3(insertdata)">
-    
-      <div class="form-outline" style="width: 100px;"> 
-      <label class="form-label" for="form2Example1">Roll No.</label>
-      <input type="text" id="form2Example1" placeholder="rollno" class="form-control" name="id" ngModel>
-    </div>
-    
-    <div class="form-outline" style="width: 200px;"> 
-    <label class="form-label" for="form2Example2" >First Name</label>
-    <input type="text" id="form2Example2" placeholder="firstname" class="form-control" name="firstname" ngModel>
-    </div>
-    
-    <div class="form-outline" > 
-    <label class="form-label" for="form2Example3">Last Name</label>
-    <input type="text" id="form2Example3" placeholder="lastname" class="form-control" name="lastname" ngModel>
-    </div><br><br><br><br>
-    
-    <div class="form-outline" style="width: 170px;"> 
-      <label class="form-label" for="form2Example4">Gender</label>
-      <input type="text" id="form2Example4" placeholder="gender" class="form-control" name="gender" ngModel>
-    </div>
-    
-    <div class="form-outline" style="width: 170px;"> 
-    <label class="form-label" for="form2Example5">Branch</label>
-    <input type="text" id="form2Example5" placeholder="branch" class="form-control" name="branch" ngModel>
-    </div>
-    
-    <div class="form-outline" style="width: 170px;"> 
-    <label class="form-label" for="form2Example6">Year</label>
-    <input type="text" id="form2Example6" placeholder="year" class="form-control" name="year" ngModel>
-    </div>
-    
-    <div class="form-outline" style="width: 170px;"> 
-      <label class="form-label" for="form2Example5">Sem</label>
-      <input type="text" id="form2Example5" placeholder="sem" class="form-control" name="sem" ngModel>
+<!--New E.E ADD-->
+<div *ngIf="div2">
+  <h2 style="text-align: center"><span>E.E. Students SignUp</span></h2>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <form #insertdata="ngForm" (ngSubmit)="insertdetails2(insertdata)">
+              <div class="mb-3">
+                <label for="id" class="form-label">Roll No.</label>
+                <input
+                  type="number"
+                  id="id"
+                  placeholder="Roll No."
+                  class="form-control"
+                  name="id"
+                  ngModel
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="firstname" class="form-label">First Name</label>
+                <input
+                  type="text"
+                  id="firstname"
+                  placeholder="First Name"
+                  class="form-control"
+                  name="firstname"
+                  ngModel
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="lastname" class="form-label">Last Name</label>
+                <input
+                  type="text"
+                  id="lastname"
+                  placeholder="Last Name"
+                  class="form-control"
+                  name="lastname"
+                  ngModel
+                  required
+                />
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label for="gender" class="form-label">Gender</label>
+                  <select id="gender" class="form-select" name="gender" ngModel>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                </div>
+                <div class="col">
+                  <label for="branch" class="form-label">Branch</label>
+                  <select id="bra\" class="form-select" name="branch" ngModel>
+                    <option value="Mechanical Engineering">
+                      Mechanical Engineering
+                    </option>
+                    <option value="Electrical Engineering">
+                      Electrical Engineering
+                    </option>
+                    <option value="Computer Engineering">
+                      Computer Engineering
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label for="year" class="form-label">Year</label>
+                  <input
+                    type="number"
+                    id="year"
+                    placeholder="Year"
+                    class="form-control"
+                    name="year"
+                    ngModel
+                    required
+                  />
+                </div>
+                <div class="col">
+                  <label for="sem" class="form-label">Semester</label>
+                  <input
+                    type="number"
+                    id="sem"
+                    placeholder="Semester"
+                    class="form-control"
+                    name="sem"
+                    ngModel
+                    required
+                  />
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="mobileno" class="form-label">Mobile No.</label>
+                <input
+                  type="number"
+                  id="mobileno"
+                  placeholder="Mobile No."
+                  class="form-control"
+                  name="mobileno"
+                  ngModel
+                  required
+                />
+              </div>
+              <div class="mb-4">
+                <small class="text-danger">{{msg}}</small><br>
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" id="email" placeholder="example@xyz.com" class="form-control" name="email" [(ngModel)]="user.email" #email="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                <div *ngIf="email.invalid && email.touched" class="text-danger">Enter a Valid Email</div>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input
+                  type="password"
+                  required
+                  minlength="5"
+                  maxlength="16"
+                  id="password"
+                  placeholder="Password"
+                  class="form-control"
+                  name="password"
+                  ngModel
+                  required
+                />
+              </div>
+              <!-- Disable the button if the form is invalid -->
+              <div class="col-md-12 text-center">
+                <button class="w-100 btn btn-primary btn-lg" type="submit" [disabled]="!insertdata.valid">
+                  SignUp
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-    
-    <div class="form-outline" style="width: 220px;"> 
-    <label class="form-label" for="form2Example7">Mobile No.</label>
-    <input type="text" id="form2Example7" placeholder="mobileno" class="form-control" name="mobileno" ngModel>
-    </div><br>
-    
-      <div class="form-outline" style="width: 250px;"> 
-          <!-- <small class="text-danger">{{msg}}</small><br> -->
-        <label class="form-label" for="form2Example8">Email address</label>
-        <input type="email" id="form2Example8" placeholder="abc@xyz.com" class="form-control" name="email" ngModel>
-        <!-- <div *ngIf="email.invalid && email.touched"><small class="text-danger">Enter Correct Email</small></div>  -->
-      </div><br><br><br><br><br>
-    
-      <div class="form-outline mb-4">
-        <label class="form-label" for="form2Example9">Password</label>
-        <input type="password" required minlength="5" maxlength="16" id="form2Example9" placeholder="password" class="form-control" name="password" ngModel>
-        <!-- <div *ngIf="password.invalid && password.touched"><small class="text-danger">Password should not be blank</small></div>    -->
-      </div><br><br><br><br><br><br>
-      <button  class="button" type="submit" value="Insert" (click)="insertdetails3(insertdata)" >Submit</button><br>
-    </form>
-      </div><br><br>
+    </div>
   </div>
+</div>
 
+<!---CE SIGNUP-->
+
+<div *ngIf="div3">
+  <h2 style="text-align: center"><span>C.E. Students SignUp</span></h2>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <form #insertdata="ngForm" (ngSubmit)="insertdetails3(insertdata)">
+              <div class="mb-3">
+                <label for="id" class="form-label">Roll No.</label>
+                <input
+                  type="number"
+                  id="id"
+                  placeholder="Roll No."
+                  class="form-control"
+                  name="id"
+                  ngModel
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="firstname" class="form-label">First Name</label>
+                <input
+                  type="text"
+                  id="firstname"
+                  placeholder="First Name"
+                  class="form-control"
+                  name="firstname"
+                  ngModel
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="lastname" class="form-label">Last Name</label>
+                <input
+                  type="text"
+                  id="lastname"
+                  placeholder="Last Name"
+                  class="form-control"
+                  name="lastname"
+                  ngModel
+                  required
+                />
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label for="gender" class="form-label">Gender</label>
+                  <select id="gender" class="form-select" name="gender" ngModel required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                </div>
+                <div class="col">
+                  <label for="branch" class="form-label">Branch</label>
+                 <select id="branch" class="form-select" name="branch" ngModel required>
+                    <option value="Mechanical Engineering">
+                      Mechanical Engineering
+                    </option>
+                    <option value="Electrical Engineering">
+                      Electrical Engineering
+                    </option>
+                    <option value="Computer Engineering">
+                      Computer Engineering
+                    </option>
+                  </select> 
+                 <!-- <input type="text" id="branch" placeholder="Branch" class="form-control" name="branch" ngModel> -->
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label for="year" class="form-label">Year</label>
+                  <input
+                    type="number"
+                    id="year"
+                    placeholder="Year"
+                    class="form-control"
+                    name="year"
+                    ngModel
+                    required
+                  />
+                </div>
+                <div class="col">
+                  <label for="sem" class="form-label">Semester</label>
+                  <input
+                    type="number"
+                    id="sem"
+                    placeholder="Semester"
+                    class="form-control"
+                    name="sem"
+                    ngModel
+                    required
+                  />
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="mobileno" class="form-label">Mobile No.</label>
+                <input
+                  type="number"
+                  id="mobileno"
+                  placeholder="Mobile No."
+                  class="form-control"
+                  name="mobileno"
+                  ngModel
+                  required
+                />
+              </div>
+              <div class="mb-4">
+                <small class="text-danger">{{msg}}</small><br>
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" id="email" placeholder="example@xyz.com" class="form-control" name="email" [(ngModel)]="user.email" #email="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                <div *ngIf="email.invalid && email.touched" class="text-danger">Enter a Valid Email</div>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input
+                  type="password"
+                  required
+                  minlength="5"
+                  maxlength="16"
+                  id="password"
+                  placeholder="Password"
+                  class="form-control"
+                  name="password"
+                  ngModel
+                  required
+                />
+              </div>
+                <!-- Disable the button if the form is invalid -->
+                <div class="col-md-12 text-center">
+                  <button class="w-100 btn btn-primary btn-lg" type="submit" [disabled]="!insertdata.valid">
+                    SignUp
+                  </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</div>

@@ -44,7 +44,7 @@ export class AdminComponent implements OnInit {
          //this.msg1='You logged in successfully';
          alert("logged in successfully");
          console.log("Successfull");
-         this.router.navigateByUrl('/adashboard');
+         this.router.navigateByUrl('/adminpanel');
        },
        _error=>{
          this.msg='Please recheck your password and emailid';
