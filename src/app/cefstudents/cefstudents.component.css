@@ -1,61 +1,74 @@
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.background-container {
+  background-image: url('src/assets/pc.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
 .main {
-  margin-left: 250px; 
-  margin-right: 10px;
-  padding: 0px 0px;
-}
-span{
-  background-color:#3399ff; 
-  color:whitesmoke;
-  padding: 5px 35px 5px 35px;
-  border-radius: 3px;
+    margin-left: 240px; 
+    margin-right: 10px;
+    padding: 0px 0px;
+  }
+  span{
+    background-color:#ea9042; 
+    color:whitesmoke;
+    padding: 5px 35px 5px 35px;
+    border-radius: 15px;
+    }
+
+    table, th, td {
+      border: 2px solid black;
+      border-collapse: collapse;
+      text-align: center;
+    }
+    th{
+      background-color:#ea9042;
+    }
+
+    td{
+      background-color: whitesmoke;
+    }
+
+  div.form-outline{
+    margin: 9px;
+    float: left;
+    
   }
 
-  table, th, td {
-    border: 2px solid black;
-    border-collapse: collapse;
+  /* .operation{
+    
+    
+    width: 80px;
+  } */
+
+  .button {
+    margin-left: 230px ;
+    display: block;
+    padding: 5px 35px;
+    font-size: 24px;
+    cursor: pointer;
     text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #ea9042;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 9px #999;
+    position: absolute;
   }
-  th{
+  
+  .button:hover {background-color:#fa0567}
+  
+  .button:active {
     background-color: #3399ff;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
   }
-
-  td{
-    background-color: whitesmoke;
-  }
-
-div.form-outline{
-  margin: 9px;
-  float: left;
   
-}
-
-/* .operation{
-  
-  
-  width: 80px;
-} */
-
-.button {
-  margin-left: 230px ;
-  display: block;
-  padding: 5px 35px;
-  font-size: 24px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: #3399ff;
-  border: none;
-  border-radius: 3px;
-  box-shadow: 0 9px #999;
-  position: absolute;
-}
-
-.button:hover {background-color:brown}
-
-.button:active {
-  background-color: #3399ff;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}

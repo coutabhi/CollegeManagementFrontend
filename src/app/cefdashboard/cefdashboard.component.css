@@ -4,7 +4,7 @@
   padding: 0px 0px;
 }
 span{
-  background-color:#3399ff; 
+  background-color:#ea9042; 
   color:whitesmoke;
   padding: 5px 55px 5px 55px;
   border-radius: 15px;
@@ -45,17 +45,32 @@ text-align: center;
 text-decoration: none;
 outline: none;
 color: #fff;
-background-color: #3399ff;
+background-color: #ea9042;
 border: none;
 border-radius: 15px;
 box-shadow: 0 9px #999;
 position: absolute;
 }
 
-.button:hover {background-color: #3399ff}
+.button:hover {background-color: #fa0567}
 
 .button:active {
-background-color: #3399ff;
+background-color: #ea9042;
 box-shadow: 0 5px #666;
 transform: translateY(4px);
+}
+.background-container {
+  background-image: url('src/assets/pc.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* Set the height to 100vh for full-screen */
+  height: 100vh;
+  /* Optionally, you can set additional styles for the container */
+  /* For example: */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Ensure the background covers the entire viewport */
+  margin: 0;
 }
