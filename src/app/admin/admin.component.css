@@ -1,4 +1,4 @@
-/********** Template CSS **********/
+
 :root {
     --primary: #06BBCC;
     --light: #F0FBFC;
@@ -22,7 +22,7 @@
 }
 
 
-/*** Spinner ***/
+
 #spinner {
     opacity: 0;
     visibility: hidden;
@@ -291,8 +291,6 @@
     transform: scale(1.1);
 }
 
-
-/*** Testimonial ***/
 .testimonial-carousel::before {
     position: absolute;
     content: "";
