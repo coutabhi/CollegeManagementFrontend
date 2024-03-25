@@ -18,6 +18,7 @@ export class InsertService {
   ADMIN_ALL = "http://localhost:8081/api/v1/admin/viewall"
   ADMIN_UPDATE = "http://localhost:8081/api/v1/admin/update"
   ADMIN_DELETE = "http://localhost:8081/api/v1/admin/delete"
+  ADMIN_FORGOT ="http://localhost:8081/api/v1/admin/forgot-password"
 
   url1 = "http://localhost:8081/addstudent"
   url2 = "http://localhost:8081/loginstudent"
@@ -103,6 +104,10 @@ export class InsertService {
 
   updateAdmin(value: any) {
     return this.http.post(this.ADMIN_UPDATE, value);
+  }
+  forgotPassword(email: string, password: string): Observable<string> {
+    const body = { email, password };
+    return this.http.post<string>(this.ADMIN_FORGOT, body);
   }
   deleteAdmin(data: any) {
     return this.http.post(this.ADMIN_DELETE, data);

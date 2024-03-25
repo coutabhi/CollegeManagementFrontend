@@ -10,12 +10,16 @@ import { UserComponent } from '../user/user.component';
   styleUrls: ['./faculty.component.css']
 })
 export class FacultyComponent implements OnInit {
+loginAdmin() {
+throw new Error('Method not implemented.');
+}
 
   //email: String="";
  // password: String ="";
 
   msg:String="";
   faculty: UserComponent= new UserComponent();
+facultyType: any;
 
   constructor(private router:Router,private ls:InsertService,private authService:AuthService) { }
 

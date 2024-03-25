@@ -1,22 +1,41 @@
+
 <app-adminpanel></app-adminpanel>
 
-<div class="main">
-    <h1 style="text-align:center;"><span>Students</span></h1><br><br>
+<div class="container main" style="margin-left:350px;margin-top: 100px;">
+  <div class="row">
 
-<div  style="margin: 10px; margin-left:0px; float: left; width: 320px;">
-<button  class="button" (click)="me()">Mechanical Engineering</button>
+    <div class="col-md-5 col-sm-6 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h4 class="card-title">
+            <a (click)="me()">Mechanical engineering</a>
+          </h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-5 col-sm-6 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h4 class="card-title">
+            <a (click)="ee()">Electronics Engineering</a>
+          </h4>
+        </div>
+      </div>
+    </div><br>
+
+    <div class="col-md-5 col-sm-6 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h4 class="card-title">
+            <a (click)="ce()">Compuer Engineering</a>
+          </h4>
+        </div>
+      </div>
+    </div>
+
+    
+      
+
+  </div>
 </div>
-
-<div  style="margin: 10px; float: left; width: 310px;">
-<button  class="button" (click)="ee()">Electronics Engineering</button>
-</div>
-
-<div style="margin: 10px; float: left; width: 110px;">
-<button  class="button" (click)="ce()">Computer Engineering</button>
-</div>
-
-
-
-</div>
-
-

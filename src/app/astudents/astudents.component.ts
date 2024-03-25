@@ -8,6 +8,7 @@ import { InsertService } from '../insert.service';
   styleUrls: ['./astudents.component.css']
 })
 export class AstudentsComponent implements OnInit {
+selectedEngineering: any;
   
   constructor(private router:Router) {}
 

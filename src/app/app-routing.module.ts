@@ -65,6 +65,7 @@ import { LibPanelComponent } from './librarian/lib-panel/lib-panel.component';
 import { BookComponent } from './book/book.component';
 import { AddBookComponent } from './book/add-book/add-book.component';
 import { LibDashComponent } from './librarian/lib-dash/lib-dash.component';
+import { AdminForgotComponent } from './admin/admin-forgot/admin-forgot.component';
 
 const routes: Routes = [
   {path:'', component : HomeComponent},
@@ -137,7 +138,7 @@ const routes: Routes = [
   {path:'cesmarksheet', component : CesmarksheetComponent,data: { title:'cesmarksheet', navigation: false,footer: false}},
   {path:'cesnotice', component : CesnoticeComponent,data: { title:'cesnotice', navigation: false,footer: false}},
   {path:'cesfees', component : CesfeesComponent,data: { title:'cesfees', navigation: false,footer: false}},
-
+  {path:'adminforgot',component : AdminForgotComponent}
 
 
 ];

@@ -1,61 +1,78 @@
 .main {
-    margin-left: 160px; 
-    margin-right: 10px;
-    padding: 0px 0px;
-  }
-  span{
-    background-color:#3399ff; 
-    color:whitesmoke;
-    padding: 5px 35px 5px 35px;
-    border-radius: 15px;
-    }
+  margin-left: 250px; 
+  margin-right: 10px;
+  padding: 0px 0px;
+}
+span{
+  background-color:#3399ff; 
+  color:whitesmoke;
+  padding: 5px 55px 5px 55px;
+  border-radius: 5px;
+}
 
-    table, th, td {
-      border: 2px solid black;
-      border-collapse: collapse;
-      text-align: center;
-    }
-    th{
-      background-color: yellow;
-    }
+div.gallery {
+margin: 9px;
+border: 4px solid black;
+float: left;
+width: 280px;
+height:250px;
+background-color:lavenderblush;
+padding: 5px;
+border-radius: 15px;
+}
 
-    td{
-      background-color: #96D4D4;
-    }
+div.gallery:hover {
+border: 3px solid #777;
+}
 
-  div.form-outline{
-    margin: 9px;
-    float: left;
-    
-  }
+div.gallery img {
+width: 100%;
+height:200px;
+}
 
-  /* .operation{
-    
-    
-    width: 80px;
-  } */
+div.desc {
+padding: 15px;
+text-align: center;
+}
+.button {
+margin-left: 65px ;
+display: block;
+padding: 5px 15px;
+font-size: 24px;
+cursor: pointer;
+text-align: center;
+text-decoration: none;
+outline: none;
+color: #fff;
+background-color: #3399ff;
+border: none;
+border-radius: 15px;
+box-shadow: 0 9px #999;
+position: absolute;
+}
 
-  .button {
-    margin-left: 230px ;
-    display: block;
-    padding: 5px 35px;
-    font-size: 24px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: #3399ff;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-    position: absolute;
-  }
-  
-  .button:hover {background-color: #3399ff}
-  
-  .button:active {
-    background-color: #3399ff;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-  }
+.button:hover {background-color: #3399ff}
+
+.button:active {
+background-color: #3e8e41;
+box-shadow: 0 5px #666;
+transform: translateY(4px);
+}
+
+.card {
+background-color: black;
+}
+
+.card:hover {
+box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+background-color: green;
+}
+
+.card-title a {
+text-decoration: none;
+color: white;
+}
+
+.card-title a:hover {
+color: white;
+}

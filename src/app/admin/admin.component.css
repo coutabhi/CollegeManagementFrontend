@@ -37,7 +37,6 @@
 }
 
 
-/*** Button ***/
 .btn {
     font-family: 'Nunito', sans-serif;
     font-weight: 600;
@@ -76,7 +75,7 @@
 }
 
 
-/*** Navbar ***/
+
 .navbar .dropdown-toggle::after {
     border: none;
     content: "\f107";
@@ -212,7 +211,6 @@
 }
 
 
-/*** Section Title ***/
 .section-title {
     position: relative;
     display: inline-block;

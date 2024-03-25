@@ -1,42 +1,25 @@
 <div class="container-xxl py-5">
-    <br>
-    <h2 style="text-align:center;"><span>Librarian Login</span></h2>
-    <br>
-  
-    <body style="padding-top: 0px;
-        padding-right: 500px;
-        padding-bottom: 50px;
-        padding-left: 500px;">
-      <div class="container" style="background-color:white; padding: 25px; border-radius: 3px;">
-  
-        <form #loginform="ngForm" (ngSubmit)="loginLibrarian()">
-          <!-- Email input -->
-          <div class="form-outline mb-4">
-            <small class="text-danger">{{msg}}</small><br>
-            <label class="form-label" for="form2Example1">Email address</label>
-            <input type="email" id="form2Example1" placeholder="example@xyz.com" class="form-control" name="email"
-              [(ngModel)]="librarian.email" #email="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-              style="border-radius: 3px;">
-            <div *ngIf="email.invalid && email.touched"><small class="text-danger">Enter Correct Email</small></div>
-          </div>
-  
-          <!-- Password input -->
-          <div class="form-outline mb-4">
-            <label class="form-label" for="form2Example2">Password</label>
-            <input type="password" required minlength="5" maxlength="16" id="form2Example2" placeholder="min 5 letters"
-              class="form-control" name="password" #password="ngModel" [(ngModel)]="librarian.password"
-              style="border-radius: 3px;">
-            <div *ngIf="password.invalid && password.touched"><small class="text-danger">Password should not be
-                blank</small></div>
-          </div>
-  
-  
-  
-          <button [disabled]="loginform.form.invalid" class="w-100 btn btn-lg btn-primary bg-black" type="submit"
-            style="border-radius: 3px;">Login</button>
-  
-        </form>
-        <!-- </body> -->
+  <h1 class="text-center mb-5"><span>Librarian Login</span></h1>
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body" style="padding: 40px;">
+          <form #loginform="ngForm" (ngSubmit)="loginLibrarian()">
+            <div class="mb-4">
+              <small class="text-danger">{{msg}}</small><br>
+              <label for="librarianEmail" class="form-label">Email address</label>
+              <input type="email" id="librarianEmail" placeholder="example@xyz.com" class="form-control" name="email" [(ngModel)]="librarian.email" #email="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+              <div *ngIf="email.invalid && email.touched" class="text-danger">Enter Correct Email</div>
+            </div>
+            <div class="mb-4">
+              <label for="librarianPassword" class="form-label">Password</label>
+              <input type="password" required minlength="5" maxlength="16" id="librarianPassword" placeholder="min 5 letters" class="form-control" name="password" #password="ngModel" [(ngModel)]="librarian.password">
+              <div *ngIf="password.invalid && password.touched" class="text-danger">Password should not be blank</div>
+            </div>
+            <button [disabled]="loginform.form.invalid" class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+          </form>
+        </div>
       </div>
-    </body>
+    </div>
   </div>
+</div>
