@@ -88,6 +88,9 @@ import { LibPanelComponent } from './librarian/lib-panel/lib-panel.component';
 import { BookComponent } from './book/book.component';
 import { AddBookComponent } from './book/add-book/add-book.component';
 import { LibDashComponent } from './librarian/lib-dash/lib-dash.component';
+import { AdminForgotComponent } from './admin/admin-forgot/admin-forgot.component';
+
+
 
 @NgModule({
   declarations: [
@@ -176,6 +179,9 @@ import { LibDashComponent } from './librarian/lib-dash/lib-dash.component';
     BookComponent,
     AddBookComponent,
     LibDashComponent,
+    AdminForgotComponent,
+    
+    
   ],
   imports: [
     BrowserModule,

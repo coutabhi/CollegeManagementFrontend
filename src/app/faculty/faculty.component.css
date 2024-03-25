@@ -501,11 +501,11 @@
     box-shadow: 0 5px #666;
     transform: translateY(4px);
   }
-  .background-container {
+  /* .background-container {
     background-image: url('src/assets/paint.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
-
+ */
 
