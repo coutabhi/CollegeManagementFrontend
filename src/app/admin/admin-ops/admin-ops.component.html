@@ -50,7 +50,8 @@
                       <td>{{l.firstname}}</td>
                       <td>{{l.lastname}}</td>
                       <td>{{l.email}}</td>
-                      <td><button class="btn btn-primary" (click)="selectFacultyForUpdate(l)">Update</button></td> <!-- Update button -->
+                      <td><button class="btn btn-primary" (click)="selectFacultyForUpdate(l)">Update</button></td>
+                      <!-- Update button -->
                     </tr>
                   </tbody>
                 </table>
@@ -64,7 +65,7 @@
       <div *ngIf="div2" class="container mt-4">
         <app-admin-add></app-admin-add>
       </div>
-      
+
 
       <div *ngIf="div3" class="container mt-4">
         <div class="card">
@@ -74,47 +75,84 @@
               <div class="form-row">
                 <div class="col">
                   <label for="form2Example1">Identification Number</label>
-                  <input type="text" id="form2Example1" class="form-control-plaintext" name="id" ngModel [(ngModel)]="selectedAdmin.id" readonly>
+                  <input type="text" id="form2Example1" class="form-control-plaintext" name="id" ngModel
+                    [(ngModel)]="selectedAdmin.id" readonly>
                 </div>
                 <div class="col">
                   <label for="form2Example2">First Name</label>
-                  <input type="text" id="form2Example2" class="form-control" name="firstname" ngModel [(ngModel)]="selectedAdmin.firstname">
+                  <input type="text" id="form2Example2" class="form-control" name="firstname" ngModel
+                    [(ngModel)]="selectedAdmin.firstname" required>
+                  <div
+                    *ngIf="data.controls['firstname'].invalid && (data.controls['firstname'].dirty || data.controls['firstname'].touched)"
+                    class="text-danger">
+                    First Name is required
+                  </div>
                 </div>
+
                 <div class="col">
                   <label for="form2Example3">Last Name</label>
-                  <input type="text" id="form2Example3" class="form-control" name="lastname" ngModel [(ngModel)]="selectedAdmin.lastname">
+                  <input type="text" id="form2Example3" class="form-control" name="lastname" ngModel
+                    [(ngModel)]="selectedAdmin.lastname" required>
+                  <div
+                    *ngIf="data.controls['lastname'].invalid && (data.controls['lastname'].dirty || data.controls['lastname'].touched)"
+                    class="text-danger">
+                    Last Name is required
+                  </div>
                 </div>
               </div>
-              <div class="col">
-                <label for="form2Example8">Password</label>
-                <input type="password" required minlength="5" maxlength="16" id="form2Example8" class="form-control" name="password" ngModel [(ngModel)]="selectedAdmin.password" autocomplete="new-password">
+              <div class="form-row">
+                <div class="col">
+                  <label for="form2Example7">Email</label>
+                  <input type="email" id="form2Example7" class="form-control" name="email" ngModel
+                    [(ngModel)]="selectedAdmin.email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                  <div
+                    *ngIf="data.controls['email'].invalid && (data.controls['email'].dirty || data.controls['email'].touched)"
+                    class="text-danger">
+                    Valid Email is required
+                  </div>
+                  <div *ngIf="data.controls['email'].errors?.['pattern']" class="text-danger">
+                    Invalid Email format
+                  </div>
+                </div>
+                <div class="col">
+                  <label for="form2Example8">Password</label>
+                  <input type="password" required minlength="5" maxlength="16" id="form2Example8" class="form-control"
+                    name="password" ngModel [(ngModel)]="selectedAdmin.password" autocomplete="new-password">
+                  <div
+                    *ngIf="data.controls['password'].invalid && (data.controls['password'].dirty || data.controls['password'].touched)"
+                    class="text-danger">
+                    Password is required (min length 5)
+                  </div>
+                </div><br>
               </div>
-              <div class="text-center">
-                <button class="btn btn-primary bg-black" type="submit" value="Update">Update</button>
+              <div class="text-center mt-3">
+                <button class="btn btn-primary" type="submit" value="Update">Update Admin</button>
               </div>
             </form>
           </div>
         </div>
       </div>
-      
-      
+
+
 
       <div *ngIf="div4">
         <!-- <div class="operation"> -->
-          <div class="container" style="background-color: white; padding: 20px; border-radius: 15px; width: 400px;">
-            <h2 style="text-align: center;">Delete Admin</h2><br>
-            <form #data="ngForm" (ngSubmit)="deleteLoginpage(data)">
-              <div class="mb-3">
-                <label for="identificationNumber" class="form-label">Enter Identification number</label>
-                <input type="text" id="identificationNumber" placeholder="Identification number" class="form-control" name="id" ngModel required >
-                <div *ngIf="data.controls['id'].touched && data.controls['id'].errors?.['required']" class="text-danger">
-                  Identification number is required
-                </div>
+        <div class="container" style="background-color: white; padding: 20px; border-radius: 15px; width: 400px;">
+          <h2 style="text-align: center;">Delete Admin</h2><br>
+          <form #data="ngForm" (ngSubmit)="deleteLoginpage(data)">
+            <div class="mb-3">
+              <label for="identificationNumber" class="form-label">Enter Identification number</label>
+              <input type="text" id="identificationNumber" placeholder="Identification number" class="form-control"
+                name="id" ngModel required>
+              <div *ngIf="data.controls['id'].touched && data.controls['id'].errors?.['required']" class="text-danger">
+                Identification number is required
               </div>
-              <button class="btn btn-primary bg-black btn-lg" style="margin-left: 140px;" type="submit" [disabled]="!data.valid">Delete</button>
-            </form>
-          </div>
-          
+            </div>
+            <button class="btn btn-primary bg-black btn-lg" style="margin-left: 140px;" type="submit"
+              [disabled]="!data.valid">Delete</button>
+          </form>
+        </div>
+
       </div>
     </div>
   </div>

@@ -29,7 +29,7 @@ import { JoinNowComponent } from './join-now/join-now.component';
 import { IntroComponent } from './intro/intro.component';
 import { FacultySignUpComponent } from './faculty-sign-up/faculty-sign-up.component';
 import { StudentSignUpComponent } from './student-sign-up/student-sign-up.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import { FacultypanelComponent } from './facultypanel/facultypanel.component';
@@ -189,6 +189,7 @@ import { AdminForgotComponent } from './admin/admin-forgot/admin-forgot.componen
     /*BrowserAnimationsModule,*/
     /*CarouselModule,*/
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BackButtonDisableModule.forRoot({preserveScrollPosition:false})
   

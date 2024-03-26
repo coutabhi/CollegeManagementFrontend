@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import { UserComponent } from './user/user.component';
 import { Book } from './book/Book';
+import { BookAssignment } from './book/BookAssignment';
+import { EventData } from './upcoming-news/EventData';
 
 @Injectable({
   providedIn: 'root'
@@ -83,6 +85,23 @@ export class InsertService {
 
   private apiUrl = 'http://localhost:8081/api/v1/books';
 
+  private apiUrl2 = 'http://localhost:8081/api/v1/books/assignments';
+
+  private eventsUrl = 'http://localhost:8081/api/v1/events';
+
+
+  getAllEvents(): Observable<EventData[]> {
+    return this.http.get<EventData[]>(this.eventsUrl);
+  }
+
+  createEvent(event: Event): Observable<Event> {
+    return this.http.post<Event>(this.eventsUrl, event);
+  }
+
+  deleteEvent(eventId: number): Observable<void> {
+    return this.http.delete<void>(`${this.eventsUrl}/${eventId}`);
+  }
+
 
   loginservice2(data3: any) {
     return this.http.post(this.ADMIN_LOGIN, data3);
@@ -146,6 +165,25 @@ export class InsertService {
   deleteBook(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
+
+  getAllBookAssignments(): Observable<BookAssignment[]> {
+    return this.http.get<BookAssignment[]>(this.apiUrl2);
+  }
+
+  saveBookAssignment(bookAssignment: BookAssignment): Observable<BookAssignment> {
+    return this.http.post<BookAssignment>(this.apiUrl2, bookAssignment);
+  }
+
+  deleteBookAssignment(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl2}/${id}`);
+  }
+
+  assignBookToStudent(studentId: number, bookId: number): Observable<void> {
+    const assignUrl = `${this.apiUrl2}/assign/${studentId}/${bookId}`;
+    return this.http.post<void>(assignUrl, {});
+  }
+
+
   loginservice1(data2: any) {
     return this.http.post(this.url2, data2);
   }

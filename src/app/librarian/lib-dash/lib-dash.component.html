@@ -1,113 +1,194 @@
 <app-lib-panel></app-lib-panel>
 
 <div class="main" style="margin-left: 240px;">
-    <h1 class="text-center" style="margin-left:200px;"><span>Librarian Operations</span></h1><br><br>
-    <div class="row">
-      <div class="col-md-3">
-        <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white col-md-3">
-          <div class="position-sticky">
-            <div class="list-group list-group-flush mx-3 mt-4">
-              <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" (click)="div1Function()">
-                <i class="fas fa-users fa-fw me-3"></i><span>Books</span>
-              </a>
-              <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" (click)="div2Function()">
-                <i class="fas fa-user-plus fa-fw me-3"></i><span>Add Book</span>
-              </a>
-              <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" (click)="div3Function()">
-                <i class="fas fa-user-edit fa-fw me-3"></i><span>Update Book</span>
-              </a>
-              <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" (click)="div4Function()">
-                <i class="fas fa-user-times fa-fw me-3"></i><span>Delete Book</span>
-              </a>
-              <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" (click)="div5Function()">
-                <i class="fas fa-eye-slash fa-fw me-3"></i><span>Hide</span>
-              </a>
-            </div>
-          </div>
-        </nav>
-      </div>
-      <div class="col-md-9">
-  
-        <div *ngIf="div1">
-            <app-book></app-book>
-        </div>
-  
-  
-        <div *ngIf="div2" class="container mt-4">
-            <app-add-book></app-add-book>
-        </div>
-        
-  
-        <div *ngIf="div3" class="container mt-4">
-          <div class="card">
-            <div class="card-body">
-              <h2 class="card-title text-center">Update Book</h2>
-              <form #data="ngForm" (ngSubmit)="updateLoginpage(data)">
-                <div class="form-row">
-                  <div class="col">
-                    <label for="form2Example1">Identification Number</label>
-                    <input type="text" id="form2Example1" class="form-control-plaintext" name="id" ngModel [(ngModel)]="selectedFaculty.id" readonly>
-                  </div>
-                  <div class="col">
-                    <label for="form2Example2">First Name</label>
-                    <input type="text" id="form2Example2" class="form-control" name="firstname" ngModel [(ngModel)]="selectedFaculty.firstname">
-                  </div>
-                  <div class="col">
-                    <label for="form2Example3">Last Name</label>
-                    <input type="text" id="form2Example3" class="form-control" name="lastname" ngModel [(ngModel)]="selectedFaculty.lastname">
-                  </div>
-                </div>
-                <div class="col">
-                  <div>
-                    <label for="form2Example4">Gender</label>
-                    <input type="text" id="form2Example4" class="form-control" name="gender" ngModel [(ngModel)]="selectedFaculty.gender">
-                  </div>
-                  <div>
-                    <label for="form2Example5">Designation</label>
-                    <input type="text" id="form2Example5" class="form-control" name="designation" ngModel [(ngModel)]="selectedFaculty.designation">
-                  </div>
-                </div>
-                <div class="col">
-                  <div>
-                    <label for="form2Example6">Mobile No.</label>
-                    <input type="text" id="form2Example6" class="form-control" name="mobileno" ngModel [(ngModel)]="selectedFaculty.mobileno">
-                  </div>
-                  <div>
-                    <label for="form2Example7">Email address</label>
-                    <input type="email" id="form2Example7" class="form-control" name="email" ngModel [(ngModel)]="selectedFaculty.email">
-                  </div>
-                </div>
-                <div class="col">
-                  <label for="form2Example8">Password</label>
-                  <input type="password" required minlength="5" maxlength="16" id="form2Example8" class="form-control" name="password" ngModel [(ngModel)]="selectedFaculty.password" autocomplete="new-password">
-                </div>
-                <div class="text-center">
-                  <button class="btn btn-primary bg-black" type="submit" value="Update">Update</button>
-                </div>
-              </form>
-            </div>
+  <h1 class="text-center" style="margin-left:200px;"><span>Librarian Operations</span></h1><br><br>
+  <div class="row">
+    <div class="col-md-3">
+      <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white col-md-3">
+        <div class="position-sticky">
+          <div class="list-group list-group-flush mx-3 mt-4">
+            <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" (click)="div1Function()">
+              <i class="fas fa-users fa-fw me-3"></i><span>Books</span>
+            </a>
+            <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" (click)="div2Function()">
+              <i class="fas fa-user-plus fa-fw me-3"></i><span>Add Book</span>
+            </a>
+            <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" (click)="div4Function()">
+              <i class="fas fa-user-times fa-fw me-3"></i><span>Delete Book</span>
+            </a>
+            <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" (click)="div7Function()">
+              <i class="fas fa-user-times fa-fw me-3"></i><span>Assigned Books</span>
+            </a>
+           
+            <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" (click)="div6Function()">
+              <i class="fas fa-user-times fa-fw me-3"></i><span>Assign Book</span>
+            </a>
+            <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" (click)="div8Function()">
+              <i class="fas fa-user-times fa-fw me-3"></i><span>Delete Assignment</span>
+            </a>
+            <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" (click)="div5Function()">
+              <i class="fas fa-eye-slash fa-fw me-3"></i><span>Hide</span>
+            </a>
           </div>
         </div>
-        
-        
-  
-        <div *ngIf="div4">
-          <!-- <div class="operation"> -->
-            <div class="container" style="background-color: white; padding: 20px; border-radius: 15px; width: 400px;">
-              <h2 style="text-align: center;">Delete Book</h2><br>
-              <form #data="ngForm" (ngSubmit)="deleteLoginpage(data)">
-                <div class="mb-3">
-                  <label for="identificationNumber" class="form-label">Enter Identification number</label>
-                  <input type="text" id="identificationNumber" placeholder="Identification number" class="form-control" name="id" ngModel required >
-                  <div *ngIf="data.controls['id'].touched && data.controls['id'].errors?.['required']" class="text-danger">
-                    Identification number is required
-                  </div>
+      </nav>
+    </div>
+    <div class="col-md-9">
+
+      <div *ngIf="div1">
+        <app-book></app-book>
+      </div>
+
+
+      <div *ngIf="div2" class="container mt-4">
+        <app-add-book></app-add-book>
+      </div>
+
+
+      <div *ngIf="div3" class="container mt-4">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title text-center">Update Book</h2>
+            <form #data="ngForm" (ngSubmit)="updateLoginpage(data)">
+              <div class="form-row">
+                <div class="col">
+                  <label for="form2Example1">Identification Number</label>
+                  <input type="text" id="form2Example1" class="form-control-plaintext" name="id" ngModel
+                    [(ngModel)]="selectedFaculty.id" readonly>
                 </div>
-                <button class="btn btn-primary bg-black btn-lg" style="margin-left: 140px;" type="submit" [disabled]="!data.valid">Delete</button>
-              </form>
-            </div>
-            
+                <div class="col">
+                  <label for="form2Example2">First Name</label>
+                  <input type="text" id="form2Example2" class="form-control" name="firstname" ngModel
+                    [(ngModel)]="selectedFaculty.firstname">
+                </div>
+                <div class="col">
+                  <label for="form2Example3">Last Name</label>
+                  <input type="text" id="form2Example3" class="form-control" name="lastname" ngModel
+                    [(ngModel)]="selectedFaculty.lastname">
+                </div>
+              </div>
+              <div class="col">
+                <div>
+                  <label for="form2Example4">Gender</label>
+                  <input type="text" id="form2Example4" class="form-control" name="gender" ngModel
+                    [(ngModel)]="selectedFaculty.gender">
+                </div>
+                <div>
+                  <label for="form2Example5">Designation</label>
+                  <input type="text" id="form2Example5" class="form-control" name="designation" ngModel
+                    [(ngModel)]="selectedFaculty.designation">
+                </div>
+              </div>
+              <div class="col">
+                <div>
+                  <label for="form2Example6">Mobile No.</label>
+                  <input type="text" id="form2Example6" class="form-control" name="mobileno" ngModel
+                    [(ngModel)]="selectedFaculty.mobileno">
+                </div>
+                <div>
+                  <label for="form2Example7">Email address</label>
+                  <input type="email" id="form2Example7" class="form-control" name="email" ngModel
+                    [(ngModel)]="selectedFaculty.email">
+                </div>
+              </div>
+              <div class="col">
+                <label for="form2Example8">Password</label>
+                <input type="password" required minlength="5" maxlength="16" id="form2Example8" class="form-control"
+                  name="password" ngModel [(ngModel)]="selectedFaculty.password" autocomplete="new-password">
+              </div>
+              <div class="text-center">
+                <button class="btn btn-primary bg-black" type="submit" value="Update">Update</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
+
+
+
+      <div *ngIf="div4">
+        <!-- <div class="operation"> -->
+        <div class="container" style="background-color: white; padding: 20px; border-radius: 15px; width: 400px;">
+          <h2 style="text-align: center;">Delete Book</h2><br>
+          <form #data="ngForm" (ngSubmit)="deleteLoginpage(data)">
+            <div class="mb-3">
+              <label for="identificationNumber" class="form-label">Enter Identification number</label>
+              <input type="text" id="identificationNumber" placeholder="Identification number" class="form-control"
+                name="id" ngModel required>
+              <div *ngIf="data.controls['id'].touched && data.controls['id'].errors?.['required']" class="text-danger">
+                Identification number is required
+              </div>
+            </div>
+            <button class="btn btn-primary bg-black btn-lg" style="margin-left: 140px;" type="submit"
+              [disabled]="!data.valid">Delete</button>
+          </form>
+        </div>
+
+      </div>
+
+      <div *ngIf="div7">
+        <h2 class="text-center justify-align-cennter">Assigned Books</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Assigned To</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let book of assignedBooks">
+              <td>{{ book.book.title }}</td>
+              <td>{{ book.book.author }}</td>
+              <td>{{ book.student.firstname }} {{ book.student.lastname }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div *ngIf="div8">  
+        <h2 class="text-center justify-align-cennter">Delete Assigned Books</h2>  
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let book of assignedBooks">
+              <td>{{ book.book.title }}</td>
+              <td>{{ book.book.author }}</td>
+              <td><button (click)="deleteAssignedBook(book.id)" class="btn btn-danger">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      
+
+      <div *ngIf="div6">
+          <h2 classs="text-center justify-align-cennter">Assign Boooks</h2>
+            <div class="center">
+              <form [formGroup]="bookAssignmentForm" (submit)="onSubmit()">
+                <label for="bookId">Select Book:</label>
+                <select formControlName="bookId" id="bookId">
+                  <option *ngFor="let book of books" [value]="book.id">{{ book.title }}</option>
+                </select>
+                <br><br>
+                <label for="studentId">Select Student:</label>
+                <select formControlName="studentId" id="studentId">
+                  <option *ngFor="let student of students" [value]="student.id">{{ student.firstname }} {{ student.lastname }}</option>
+                </select>
+                <br><br>
+                <button type="submit">Assign Book</button>
+              </form>
+            </div>
+          
+      </div>
+
+
     </div>
   </div>
+</div>

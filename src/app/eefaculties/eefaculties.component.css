@@ -16,11 +16,12 @@ span{
     text-align: center;
   }
   th{
-    background-color: #efeff0;
+    background-color: white;
   }
 
+
   td{
-    background-color:whitesmoke;
+    background-color:#DFF5FF;
   }
 
 div.form-outline{
@@ -29,8 +30,17 @@ div.form-outline{
   
 }
 
-.button:active {
-  background-color: #3399ff;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+.btn{
+  background-color: black;
+  color: white;
+}
+
+.btn:hover{
+  background-color: white;
+  color: black;
+  transform: scale(1.1);
+}
+
+form{
+  background-color: #DFF5FF;
 }

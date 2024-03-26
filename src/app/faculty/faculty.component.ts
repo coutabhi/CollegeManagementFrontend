@@ -59,7 +59,7 @@ div3Function(){
       case 'mechanical':
         this.div1Function();
         break;
-      case 'electronics':
+      case 'electrical':
         this.div2Function();
         break;
       case 'computer':

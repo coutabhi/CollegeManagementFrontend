@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InsertService } from 'src/app/insert.service';
 import { Book } from '../Book';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-book',
@@ -26,9 +26,16 @@ export class AddBookComponent implements OnInit {
   onSubmit(): void {
     this.bookService.addBook(this.book)
       .subscribe(() => {
-        console.log('Book added successfully');
-        this.router.navigateByUrl("/libdash");
+        alert('Book added successfully');
+        this.navigateToLibdash();
       });
+  }
+  
+  navigateToLibdash(): void {
+    const navigationExtras: NavigationExtras = {
+      replaceUrl: true // Replace the current URL in the navigation history
+    };
+    this.router.navigateByUrl('/libdash', navigationExtras);
   }
 
 }
