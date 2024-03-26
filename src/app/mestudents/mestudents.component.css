@@ -1,61 +1,61 @@
 .main {
-    margin-left: 240px; 
-    margin-right: 10px;
-    padding: 0px 0px;
-  }
-  span{
-    background-color:#121518; 
-    color:whitesmoke;
-    padding: 5px 35px 5px 35px;
-    border-radius: 15px;
-    }
-
-    table, th, td {
-      border: 2px solid black;
-      border-collapse: collapse;
-      text-align: center;
-    }
-    th{
-      background-color: #8abada
-    }
-
-    td{
-      background-color: whitesmoke;
-    }
-
-  div.form-outline{
-    margin: 9px;
-    float: left;
-    
+  margin-left: 250px; 
+  margin-right: 10px;
+  padding: 0px 0px;
+}
+span{
+  background-color:#3399ff; 
+  color:whitesmoke;
+  padding: 5px 35px 5px 35px;
+  border-radius: 15px;
   }
 
-  
-  .form-control{
-    width: 110px;
-
-  }
- 
-  .button {
-    margin-left: 150px ;
-    display: block;
-    padding: 5px 35px;
-    font-size: 24px;
-    cursor: pointer;
+  table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
     text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: #181e24;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-    position: absolute;
   }
-  
-  .button:hover {background-color: rgb(49, 67, 90)}
-  
-  .button:active {
-    background-color:  #2f3e4d;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
+  th{
+    background-color: white;
   }
+
+  td{
+    background-color:whitesmoke;
+  }
+
+div.form-outline{
+  margin: 9px;
+  float: left;
+  
+}
+
+/* .operation{
+  
+  
+  width: 80px;
+} */
+
+.button {
+  margin-left: 230px ;
+  display: block;
+  padding: 5px 35px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #03090f;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  position: absolute;
+}
+
+.button:hover {background-color:brown}
+
+.button:active {
+  background-color: #3399ff;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
