@@ -138,7 +138,7 @@ const routes: Routes = [
   {path:'cesmarksheet', component : CesmarksheetComponent,data: { title:'cesmarksheet', navigation: false,footer: false}},
   {path:'cesnotice', component : CesnoticeComponent,data: { title:'cesnotice', navigation: false,footer: false}},
   {path:'cesfees', component : CesfeesComponent,data: { title:'cesfees', navigation: false,footer: false}},
-  {path:'adminforgot',component : AdminForgotComponent}
+  {path:'adminforgot',component : AdminForgotComponent,data: { title:'cesfees', navigation: true,footer: false}}
 
 
 ];

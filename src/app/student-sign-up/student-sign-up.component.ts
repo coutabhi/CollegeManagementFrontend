@@ -52,7 +52,7 @@ throw new Error('Method not implemented.');
         case 'mechanical':
           this.div1Function();
           break;
-        case 'electronics':
+        case 'electrical':
           this.div2Function();
           break;
         case 'computer':

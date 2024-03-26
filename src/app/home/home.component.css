@@ -35,25 +35,26 @@ div.gallery {
     font-family:'Times New Roman', Times, serif ;
   }
 
-
-  .marquee-container {
+  .card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    width: 150px;
+    text-align: center;
+  }
+  
+  .card img {
     width: 100%;
-}
-
-.marquee {
-    font-size: 40px;
-    color: #942929;
-    white-space: nowrap;
-    position: absolute;
-}
-
-@keyframes marquee {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
+    height: auto;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .card-info {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    border-radius: 0 0 10px 10px;
+  }
   

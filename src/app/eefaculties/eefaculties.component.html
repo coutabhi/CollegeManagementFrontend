@@ -13,9 +13,6 @@
             <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" (click)="div2Function()">
               <i class="fas fa-user-plus fa-fw me-3"></i><span>Add</span>
             </a>
-            <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" (click)="div3Function()">
-              <i class="fas fa-user-edit fa-fw me-3"></i><span>Update</span>
-            </a>
             <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" (click)="div4Function()">
               <i class="fas fa-user-times fa-fw me-3"></i><span>Delete</span>
             </a>
@@ -65,129 +62,192 @@
           </div>
         </div>
       </div>
-
-
+      
+      
       <div *ngIf="div2" class="container mt-4">
         <div class="card">
           <div class="card-body">
             <h2 class="card-title text-center">Add Faculties</h2>
-            <form #insertdata="ngForm" (ngSubmit)="insertdetails(insertdata)">
-              <div class="mb-3">
-                <label for="form2Example1" class="form-label">Custom Identification Number</label>
-                <input type="text" id="form2Example1" placeholder="id" class="form-control" name="id" ngModel>
-              </div>
-      
+            <form class="rounded p-5" #insertdata="ngForm" (ngSubmit)="insertdetails(insertdata)">
               <div class="row g-3">
                 <div class="col-md-6">
                   <div class="mb-3">
                     <label for="form2Example2" class="form-label">First Name</label>
-                    <input type="text" id="form2Example2" placeholder="firstname" class="form-control" name="firstname"
-                      ngModel>
+                    <input type="text" id="form2Example2" placeholder="Firstname" class="form-control" name="firstname"
+                      ngModel required #firstname="ngModel">
+                    <div *ngIf="firstname.invalid && firstname.touched" class="text-danger">First Name is required</div>
                   </div>
                 </div>
-      
+
                 <div class="col-md-6">
                   <div class="mb-3">
                     <label for="form2Example3" class="form-label">Last Name</label>
-                    <input type="text" id="form2Example3" placeholder="lastname" class="form-control" name="lastname" ngModel>
+                    <input type="text" id="form2Example3" placeholder="Lastname" class="form-control" name="lastname"
+                      ngModel required #lastname="ngModel">
+                    <div *ngIf="lastname.invalid && lastname.touched" class="text-danger">Last Name is required</div>
                   </div>
                 </div>
               </div>
-      
+
               <div class="mb-3">
                 <label for="form2Example4" class="form-label">Gender</label>
-                <input type="text" id="form2Example4" placeholder="gender" class="form-control" name="gender" ngModel>
+                <select id="form2Example4" class="form-select" name="gender" ngModel required #gender="ngModel">
+                  <option value="" disabled selected>Select gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Others">Others</option>
+                </select>
+                <div *ngIf="gender.invalid && gender.touched" class="text-danger">Gender is required</div>
               </div>
-      
+
+
               <div class="mb-3">
                 <label for="form2Example5" class="form-label">Designation</label>
-                <input type="text" id="form2Example5" placeholder="designation" class="form-control" name="designation"
-                  ngModel>
+                <select id="form2Example5" class="form-select" name="designation" ngModel required
+                  #designation="ngModel">
+                  <option value="" disabled selected>Select designation</option>
+                  <option value="HOD">HOD</option>
+                  <option value="Assistant Professor">Assistant Professor</option>
+                  <option value="Professor">Professor</option>
+                  <option value="Lab Assistant">Lab Assistant</option>
+                </select>
+                <div *ngIf="designation.invalid && designation.touched" class="text-danger">Designation is required
+                </div>
               </div>
-      
+
+
               <div class="mb-3">
                 <label for="form2Example6" class="form-label">Mobile No.</label>
-                <input type="text" id="form2Example6" placeholder="mobileno" class="form-control" maxlength="10" minlength="10" name="mobileno" required ngModel>
+                <input type="text" id="form2Example6" placeholder="Mobile No." class="form-control" maxlength="10"
+                  minlength="10" name="mobileno" required ngModel #mobileno="ngModel">
+                <div *ngIf="mobileno.invalid && mobileno.touched" class="text-danger">Enter a valid 10-digit Mobile No.
+                </div>
               </div>
-      
+
               <div class="mb-3">
                 <label for="form2Example7" class="form-label">Email address</label>
-                <input type="email" id="form2Example7" placeholder="abc@xyz.com" class="form-control" name="email" ngModel>
+                <input type="email" id="form2Example7" placeholder="example@aryavat.com" class="form-control"
+                  name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ngModel #email="ngModel">
+                <div *ngIf="email.invalid && email.touched" class="text-danger">Enter a valid Email address</div>
               </div>
-      
+
               <div class="mb-3">
                 <label for="form2Example8" class="form-label">Password</label>
-                <input type="password" required minlength="5" maxlength="16" id="form2Example8" placeholder="password"
-                  class="form-control" name="password" ngModel>
+                <input type="password" required minlength="5" maxlength="16" id="form2Example8"
+                  placeholder="min 5 letters" class="form-control" name="password" ngModel #password="ngModel">
+                <div *ngIf="password.invalid && password.touched" class="text-danger">Password should be 5-16 characters
+                  long</div>
               </div>
-      
+              <br>
               <div class="text-center">
-                <button class="btn btn-primary" type="submit" value="Insert" (click)="insertdetails(insertdata)">Add</button>
+                <button [disabled]="insertdata.form.invalid" class="w-100 btn" type="submit">Click to add
+                  Faculty</button>
               </div>
             </form>
           </div>
         </div>
       </div>
-      
 
       <div *ngIf="div3" class="container mt-4">
         <div class="card">
           <div class="card-body">
             <h2 class="card-title text-center">Update Faculty</h2>
-            <form #data="ngForm" (ngSubmit)="updateLoginpage(data)">
+            <form class="rounded p-5" #data="ngForm" (ngSubmit)="updateLoginpage(data)">
               <div class="form-row">
                 <div class="col">
                   <label for="form2Example1">Identification Number</label>
-                  <input type="text" id="form2Example1" class="form-control-plaintext" name="id" ngModel [(ngModel)]="selectedFaculty.id" readonly>
+                  <input type="text" id="form2Example1" class="form-control-plaintext" name="id"
+                    [ngModel]="selectedFaculty.id" readonly>
                 </div>
                 <div class="col">
                   <label for="form2Example2">First Name</label>
-                  <input type="text" id="form2Example2" class="form-control" name="firstname" ngModel [(ngModel)]="selectedFaculty.firstname">
+                  <input type="text" id="form2Example2" class="form-control" name="firstname"
+                    [(ngModel)]="selectedFaculty.firstname" required #firstname="ngModel">
+                  <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)" class="text-danger">
+                    First Name is required
+                  </div>
                 </div>
                 <div class="col">
                   <label for="form2Example3">Last Name</label>
-                  <input type="text" id="form2Example3" class="form-control" name="lastname" ngModel [(ngModel)]="selectedFaculty.lastname">
+                  <input type="text" id="form2Example3" class="form-control" name="lastname"
+                    [(ngModel)]="selectedFaculty.lastname" required #lastname="ngModel">
+                  <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)" class="text-danger">
+                    Last Name is required
+                  </div>
                 </div>
               </div>
-              <div class="col">
-                <div>
+              <div class="form-row">
+                <div class="col">
                   <label for="form2Example4">Gender</label>
-                  <input type="text" id="form2Example4" class="form-control" name="gender" ngModel [(ngModel)]="selectedFaculty.gender">
+                  <select id="form2Example4" class="form-select" name="gender" [(ngModel)]="selectedFaculty.gender"
+                    required #gender="ngModel">
+                    <option value="" disabled selected>Select gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Others">Others</option>
+                  </select>
+                  <div *ngIf="gender.invalid && (gender.dirty || gender.touched)" class="text-danger">
+                    Gender is required
+                  </div>
                 </div>
-                <div>
+                <div class="col">
                   <label for="form2Example5">Designation</label>
-                  <input type="text" id="form2Example5" class="form-control" name="designation" ngModel [(ngModel)]="selectedFaculty.designation">
+                  <select id="form2Example5" class="form-select" name="designation"
+                    [(ngModel)]="selectedFaculty.designation" required #designation="ngModel">
+                    <option value="" disabled selected>Select designation</option>
+                    <option value="HOD">HOD</option>
+                    <option value="Assistant Professor">Assistant Professor</option>
+                    <option value="Professor">Professor</option>
+                    <option value="Lab Assistant">Lab Assistant</option>
+                  </select>
+                  <div *ngIf="designation.invalid && (designation.dirty || designation.touched)" class="text-danger">
+                    Designation is required
+                  </div>
                 </div>
+
               </div>
-              <div class="col">
-                <div>
+              <div class="form-row">
+                <div class="col">
                   <label for="form2Example6">Mobile No.</label>
-                  <input type="text" id="form2Example6" class="form-control" name="mobileno" ngModel [(ngModel)]="selectedFaculty.mobileno">
+                  <input type="text" id="form2Example6" class="form-control" name="mobileno"
+                    [(ngModel)]="selectedFaculty.mobileno" required #mobileno="ngModel">
+                  <div *ngIf="mobileno.invalid && (mobileno.dirty || mobileno.touched)" class="text-danger">
+                    Mobile No. is required
+                  </div>
                 </div>
-                <div>
+                <div class="col">
                   <label for="form2Example7">Email address</label>
-                  <input type="email" id="form2Example7" class="form-control" name="email" ngModel [(ngModel)]="selectedFaculty.email">
+                  <input type="email" id="form2Example7" class="form-control" name="email"
+                    [(ngModel)]="selectedFaculty.email" required #email="ngModel"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                  <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+                    Enter a valid Email address
+                  </div>
                 </div>
               </div>
-              <div class="col">
-                <label for="form2Example8">Password</label>
-                <input type="password" required minlength="5" maxlength="16" id="form2Example8" class="form-control" name="password" ngModel [(ngModel)]="selectedFaculty.password" autocomplete="new-password">
-              </div>
+              <div class="form-row">
+                <div class="col">
+                  <label for="form2Example8">Password</label>
+                  <input type="password" required minlength="5" maxlength="16" id="form2Example8" class="form-control"
+                    name="password" [(ngModel)]="selectedFaculty.password" autocomplete="new-password">
+                </div>
+              </div><br>
               <div class="text-center">
-                <button class="btn btn-primary bg-black" type="submit" value="Update">Update</button>
+                <button class="btn btn-primary" type="submit" [disabled]="data.invalid">Update Faculty</button>
               </div>
             </form>
           </div>
         </div>
       </div>
-      
+
+
       
 
       <div *ngIf="div4">
         <!-- <div class="operation"> -->
           <div class="container" style="background-color: white; padding: 20px; border-radius: 15px; width: 400px;">
             <h2 style="text-align: center;">Delete Faculties</h2><br>
-            <form #data="ngForm" (ngSubmit)="deleteLoginpage(data)">
+            <form class="rounded p-5" #data="ngForm" (ngSubmit)="deleteLoginpage(data)">
               <div class="mb-3">
                 <label for="identificationNumber" class="form-label">Enter Identification number</label>
                 <input type="text" id="identificationNumber" placeholder="Identification number" class="form-control" name="id" ngModel required >
@@ -195,7 +255,7 @@
                   Identification number is required
                 </div>
               </div>
-              <button class="btn btn-primary bg-black btn-lg" style="margin-left: 140px;" type="submit" [disabled]="!data.valid">Delete</button>
+              <button class="btn" style="margin-left: 100px;" type="submit" [disabled]="!data.valid">Delete</button>
             </form>
           </div>
           

@@ -43,7 +43,8 @@
                     <tr *ngFor="let l of loginpages">
                       <td>{{l.id}}</td>
                       <td>{{l.branch}}</td>
-                      <td><button class="btn btn-primary" (click)="selectBranchForUpdate(l)">Delete</button></td> <!-- Update button -->
+                      <td><button class="btn btn-primary" (click)="selectBranchForUpdate(l)">Delete</button></td>
+                      <!-- Update button -->
                     </tr>
                   </tbody>
                 </table>
@@ -58,38 +59,49 @@
         <div class="card">
           <div class="card-body">
             <h2 class="card-title text-center">Add Branch</h2>
-            <form #insertdata="ngForm" (ngSubmit)="insertdetails(insertdata)">
-      
-              <div class="mb-3">
+            <form class="rounded p-5" #insertdata="ngForm" (ngSubmit)="insertdetails(insertdata)">
+              <div class="mb-3" [ngClass]="{'has-error': branch.invalid && (branch.dirty || branch.touched)}">
                 <label for="form2Example2" class="form-label">Branch</label>
-                <input type="text" id="form2Example2" placeholder="branch" class="form-control" name="branch" ngModel>
+                <input type="text" id="form2Example2" placeholder="Branch" class="form-control" name="branch" ngModel
+                  #branch="ngModel" required>
+                <div *ngIf="branch.invalid && (branch.dirty || branch.touched)" class="text-danger">
+                  Branch is required
+                </div>
               </div>
-      
+
               <div class="text-center">
-                <button class="btn btn-primary" type="submit" value="Insert" (click)="insertdetails(insertdata)">Add</button>
+                <button class="btn" type="submit" value="Insert" [disabled]="insertdata.invalid">Click to add
+                  branch</button>
               </div>
             </form>
+
           </div>
         </div>
       </div>
-      
+
 
       <div *ngIf="div3" class="container mt-4">
         <div class="card">
           <div class="card-body">
             <h2 class="card-title text-center">Delete Branch</h2>
-            <form #data="ngForm" (ngSubmit)="deleteBranch(data)">
+            <form class="rounded p-5" #data="ngForm" (ngSubmit)="deleteBranch(data)">
               <div class="mb-3">
                 <label for="form2Example1" class="form-label">Identification Number</label>
-                <input type="text" id="form2Example1" placeholder="id" class="form-control" name="id" ngModel [(ngModel)]="selectedBranch.id">
+                <input type="text" id="form2Example1" placeholder="id" class="form-control" name="id" ngModel
+                  [(ngModel)]="selectedBranch.id" required>
+                <div *ngIf="data.controls['id'].invalid && (data.controls['id'].dirty || data.controls['id'].touched)"
+                  class="text-danger">
+                  Identification Number is required
+                </div>
               </div>
               <div class="text-center">
-                <button class="btn btn-primary" type="submit" value="Delete" (click)="deleteBranch(data)">Delete</button>
+                <button class="btn" type="submit" value="Delete" [disabled]="data.invalid">Click to delete</button>
               </div>
             </form>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </div>

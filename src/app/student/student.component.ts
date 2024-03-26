@@ -52,7 +52,7 @@ export class StudentComponent implements OnInit {
       case 'mechanical':
         this.div1Function();
         break;
-      case 'electronics':
+      case 'electrical':
         this.div2Function();
         break;
       case 'computer':
