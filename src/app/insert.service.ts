@@ -13,81 +13,166 @@ export class InsertService {
 
   constructor(private http: HttpClient) { }
 
-
-  ADMIN_INSERT = "http://localhost:8081/api/v1/admin/insert"
-  ADMIN_LOGIN = "http://localhost:8081/api/v1/admin/login"
-  ADMIN_VIEW = "http://localhost:8081/api/v1/admin/view"
-  ADMIN_ALL = "http://localhost:8081/api/v1/admin/viewall"
-  ADMIN_UPDATE = "http://localhost:8081/api/v1/admin/update"
-  ADMIN_DELETE = "http://localhost:8081/api/v1/admin/delete"
-  ADMIN_FORGOT ="http://localhost:8081/api/v1/admin/forgot-password"
-
-  url1 = "http://localhost:8081/addstudent"
-  url2 = "http://localhost:8081/loginstudent"
-  url3 = "http://localhost:8081/viewstudent"
-  url11 = "http://localhost:8081/updatestudent"
-  url12 = "http://localhost:8081/deletestudent"
-
-  url15 = "http://localhost:8081/addeestudent"
-  url16 = "http://localhost:8081/logineestudent"
-  url17 = "http://localhost:8081/vieweestudent"
-  url18 = "http://localhost:8081/updateeestudent"
-  url19 = "http://localhost:8081/deleteeestudent"
-
-  url20 = "http://localhost:8081/addcestudent"
-  url21 = "http://localhost:8081/logincestudent"
-  url22 = "http://localhost:8081/viewcestudent"
-  url23 = "http://localhost:8081/updatecestudent"
-  url24 = "http://localhost:8081/deletecestudent"
-
-  url8 = "http://localhost:8081/addmefaculty"
-  url9 = "http://localhost:8081/loginmefaculty"
-  url10 = "http://localhost:8081/viewmefaculty"
-  url13 = "http://localhost:8081/updatemefaculty"
-  url14 = "http://localhost:8081/deletemefaculty"
-
-  url25 = "http://localhost:8081/addeefaculty"
-  url26 = "http://localhost:8081/logineefaculty"
-  url27 = "http://localhost:8081/vieweefaculty"
-  url28 = "http://localhost:8081/updateeefaculty"
-  url29 = "http://localhost:8081/deleteeefaculty"
-
-  url30 = "http://localhost:8081/addcefaculty"
-  url31 = "http://localhost:8081/logincefaculty"
-  url32 = "http://localhost:8081/viewcefaculty"
-  url33 = "http://localhost:8081/updatecefaculty"
-  url34 = "http://localhost:8081/deletecefaculty"
-
-  url35 = "http://localhost:8081/addstaff"
-  url36 = "http://localhost:8081/loginstaff"
-  url37 = "http://localhost:8081/viewstaff"
-  url38 = "http://localhost:8081/updatestaff"
-  url39 = "http://localhost:8081/deletestaff"
+  
+ /*
+ 
+  REMOTE_BASE_URL = "http://52.66.125.0:8081"
 
 
-  url40 = "http://localhost:8081/addbranch"
-  url41 = "http://localhost:8081/viewbranch"
-  url42 = "http://localhost:8081/deletebranch"
+  ADMIN_INSERT = `${this.REMOTE_BASE_URL}/api/v1/admin/insert`
+  ADMIN_LOGIN = `${this.REMOTE_BASE_URL}/api/v1/admin/login`
+  ADMIN_VIEW = `${this.REMOTE_BASE_URL}/api/v1/admin/view`
+  ADMIN_ALL = `${this.REMOTE_BASE_URL}/api/v1/admin/viewall`
+  ADMIN_UPDATE = `${this.REMOTE_BASE_URL}/api/v1/admin/update`
+  ADMIN_DELETE = `${this.REMOTE_BASE_URL}/api/v1/admin/delete`
+  ADMIN_FORGOT = `${this.REMOTE_BASE_URL}/api/v1/admin/forgot-password`
+
+  url1 = `${this.REMOTE_BASE_URL}/addstudent`
+  url2 = `${this.REMOTE_BASE_URL}/loginstudent`
+  url3 = `${this.REMOTE_BASE_URL}/viewstudent`
+  url11 = `${this.REMOTE_BASE_URL}/updatestudent`
+  url12 = `${this.REMOTE_BASE_URL}/deletestudent`
+
+  url15 = `${this.REMOTE_BASE_URL}/addeestudent`
+  url16 = `${this.REMOTE_BASE_URL}/logineestudent`
+  url17 = `${this.REMOTE_BASE_URL}/vieweestudent`
+  url18 = `${this.REMOTE_BASE_URL}/updateeestudent`
+  url19 = `${this.REMOTE_BASE_URL}/deleteeestudent`
+
+  url20 = `${this.REMOTE_BASE_URL}/addcestudent`
+  url21 = `${this.REMOTE_BASE_URL}/logincestudent`
+  url22 = `${this.REMOTE_BASE_URL}/viewcestudent`
+  url23 = `${this.REMOTE_BASE_URL}/updatecestudent`
+  url24 = `${this.REMOTE_BASE_URL}/deletecestudent`
+
+  url8 = `${this.REMOTE_BASE_URL}/addmefaculty`
+  url9 = `${this.REMOTE_BASE_URL}/loginmefaculty`
+  url10 = `${this.REMOTE_BASE_URL}/viewmefaculty`
+  url13 = `${this.REMOTE_BASE_URL}/updatemefaculty`
+  url14 = `${this.REMOTE_BASE_URL}/deletemefaculty`
+
+  url25 = `${this.REMOTE_BASE_URL}/addeefaculty`
+  url26 = `${this.REMOTE_BASE_URL}/logineefaculty`
+  url27 = `${this.REMOTE_BASE_URL}/vieweefaculty`
+  url28 = `${this.REMOTE_BASE_URL}/updateeefaculty`
+  url29 = `${this.REMOTE_BASE_URL}/deleteeefaculty`
+
+  url30 = `${this.REMOTE_BASE_URL}/addcefaculty`
+  url31 = `${this.REMOTE_BASE_URL}/logincefaculty`
+  url32 = `${this.REMOTE_BASE_URL}/viewcefaculty`
+  url33 = `${this.REMOTE_BASE_URL}/updatecefaculty`
+  url34 = `${this.REMOTE_BASE_URL}/deletecefaculty`
+
+  url35 = `${this.REMOTE_BASE_URL}/addstaff`
+  url36 = `${this.REMOTE_BASE_URL}/loginstaff`
+  url37 = `${this.REMOTE_BASE_URL}/viewstaff`
+  url38 = `${this.REMOTE_BASE_URL}/updatestaff`
+  url39 = `${this.REMOTE_BASE_URL}/deletestaff`
 
 
-  url43 = "http://localhost:8081/addnotify"
-  url44 = "http://localhost:8081/viewnotify"
-  url45 = "http://localhost:8081/deletenotify"
+  url40 = `${this.REMOTE_BASE_URL}/addbranch`
+  url41 = `${this.REMOTE_BASE_URL}/viewbranch`
+  url42 = `${this.REMOTE_BASE_URL}/deletebranch`
 
 
-  url46 = "http://localhost:8081/addmemarksheet"
-  url47 = "http://localhost:8081/viewmemarksheet"
-  url48 = "http://localhost:8081/deletememarksheet"
-  url49 = "http://localhost:8081/updatememarksheet"
+  url43 = `${this.REMOTE_BASE_URL}/addnotify`
+  url44 = `${this.REMOTE_BASE_URL}/viewnotify`
+  url45 = `${this.REMOTE_BASE_URL}/deletenotify`
 
-  url50 = "http://localhost:8081/addfees"
-  url51 = "http://localhost:8081/viewfees"
 
-  private apiUrl = 'http://localhost:8081/api/v1/books';
+  url46 = `${this.REMOTE_BASE_URL}/addmemarksheet`
+  url47 = `${this.REMOTE_BASE_URL}/viewmemarksheet`
+  url48 = `${this.REMOTE_BASE_URL}/deletememarksheet`
+  url49 = `${this.REMOTE_BASE_URL}/updatememarksheet`
 
-  private apiUrl2 = 'http://localhost:8081/api/v1/books/assignments';
+  url50 = `${this.REMOTE_BASE_URL}/addfees`
+  url51 = `${this.REMOTE_BASE_URL}/viewfees`
 
-  private eventsUrl = 'http://localhost:8081/api/v1/events';
+  private apiUrl = `${this.REMOTE_BASE_URL}/api/v1/books`;
+
+  private apiUrl2 = `${this.REMOTE_BASE_URL}/api/v1/books/assignments`;
+
+  private eventsUrl = `${this.REMOTE_BASE_URL}/api/v1/events`;
+
+  */
+
+
+  LOCAL_BASE_URL = "http://localhost:8081"
+
+  ADMIN_INSERT = `${this.LOCAL_BASE_URL}/api/v1/admin/insert`
+  ADMIN_LOGIN = `${this.LOCAL_BASE_URL}/api/v1/admin/login`
+  ADMIN_VIEW = `${this.LOCAL_BASE_URL}/api/v1/admin/view`
+  ADMIN_ALL = `${this.LOCAL_BASE_URL}/api/v1/admin/viewall`
+  ADMIN_UPDATE = `${this.LOCAL_BASE_URL}/api/v1/admin/update`
+  ADMIN_DELETE = `${this.LOCAL_BASE_URL}/api/v1/admin/delete`
+  ADMIN_FORGOT = `${this.LOCAL_BASE_URL}/api/v1/admin/forgot-password`
+
+  url1 = `${this.LOCAL_BASE_URL}/addstudent`
+  url2 = `${this.LOCAL_BASE_URL}/loginstudent`
+  url3 = `${this.LOCAL_BASE_URL}/viewstudent`
+  url11 = `${this.LOCAL_BASE_URL}/updatestudent`
+  url12 = `${this.LOCAL_BASE_URL}/deletestudent`
+
+  url15 = `${this.LOCAL_BASE_URL}/addeestudent`
+  url16 = `${this.LOCAL_BASE_URL}/logineestudent`
+  url17 = `${this.LOCAL_BASE_URL}/vieweestudent`
+  url18 = `${this.LOCAL_BASE_URL}/updateeestudent`
+  url19 = `${this.LOCAL_BASE_URL}/deleteeestudent`
+
+  url20 = `${this.LOCAL_BASE_URL}/addcestudent`
+  url21 = `${this.LOCAL_BASE_URL}/logincestudent`
+  url22 = `${this.LOCAL_BASE_URL}/viewcestudent`
+  url23 = `${this.LOCAL_BASE_URL}/updatecestudent`
+  url24 = `${this.LOCAL_BASE_URL}/deletecestudent`
+
+  url8 = `${this.LOCAL_BASE_URL}/addmefaculty`
+  url9 = `${this.LOCAL_BASE_URL}/loginmefaculty`
+  url10 = `${this.LOCAL_BASE_URL}/viewmefaculty`
+  url13 = `${this.LOCAL_BASE_URL}/updatemefaculty`
+  url14 = `${this.LOCAL_BASE_URL}/deletemefaculty`
+
+  url25 = `${this.LOCAL_BASE_URL}/addeefaculty`
+  url26 = `${this.LOCAL_BASE_URL}/logineefaculty`
+  url27 = `${this.LOCAL_BASE_URL}/vieweefaculty`
+  url28 = `${this.LOCAL_BASE_URL}/updateeefaculty`
+  url29 = `${this.LOCAL_BASE_URL}/deleteeefaculty`
+
+  url30 = `${this.LOCAL_BASE_URL}/addcefaculty`
+  url31 = `${this.LOCAL_BASE_URL}/logincefaculty`
+  url32 = `${this.LOCAL_BASE_URL}/viewcefaculty`
+  url33 = `${this.LOCAL_BASE_URL}/updatecefaculty`
+  url34 = `${this.LOCAL_BASE_URL}/deletecefaculty`
+
+  url35 = `${this.LOCAL_BASE_URL}/addstaff`
+  url36 = `${this.LOCAL_BASE_URL}/loginstaff`
+  url37 = `${this.LOCAL_BASE_URL}/viewstaff`
+  url38 = `${this.LOCAL_BASE_URL}/updatestaff`
+  url39 = `${this.LOCAL_BASE_URL}/deletestaff`
+
+
+  url40 = `${this.LOCAL_BASE_URL}/addbranch`
+  url41 = `${this.LOCAL_BASE_URL}/viewbranch`
+  url42 = `${this.LOCAL_BASE_URL}/deletebranch`
+
+
+  url43 = `${this.LOCAL_BASE_URL}/addnotify`
+  url44 = `${this.LOCAL_BASE_URL}/viewnotify`
+  url45 = `${this.LOCAL_BASE_URL}/deletenotify`
+
+
+  url46 = `${this.LOCAL_BASE_URL}/addmemarksheet`
+  url47 = `${this.LOCAL_BASE_URL}/viewmemarksheet`
+  url48 = `${this.LOCAL_BASE_URL}/deletememarksheet`
+  url49 = `${this.LOCAL_BASE_URL}/updatememarksheet`
+
+  url50 = `${this.LOCAL_BASE_URL}/addfees`
+  url51 = `${this.LOCAL_BASE_URL}/viewfees`
+
+  private apiUrl = `${this.LOCAL_BASE_URL}/api/v1/books`;
+
+  private apiUrl2 = `${this.LOCAL_BASE_URL}/api/v1/books/assignments`;
+
+  private eventsUrl = `${this.LOCAL_BASE_URL}/api/v1/events`;
 
 
   getAllEvents(): Observable<EventData[]> {
@@ -159,6 +244,7 @@ export class InsertService {
   }
 
   updateBook(id: number, book: Book): Observable<Book> {
+    console.log("Code comes here in the update bookk", id, book)
     return this.http.put<Book>(`${this.apiUrl}/${id}`, book);
   }
 
@@ -189,7 +275,7 @@ export class InsertService {
   }
 
   public loginUserFromRemote(user: UserComponent): Observable<object> {
-    console.log("In the loginUserFromRemote")
+    console.log(`In the loginUserFromRemote`)
     console.log(user);
     return this.http.post(this.url2, user);
 

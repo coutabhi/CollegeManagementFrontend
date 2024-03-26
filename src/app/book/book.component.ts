@@ -34,6 +34,7 @@ export class BookComponent implements OnInit {
   
     this.bookService.updateBook(this.selectedBook.id, this.selectedBook)
       .subscribe(() => {
+        alert("Book update successfully")
         console.log('Book updated successfully');
         this.getAllBooks(); // Refresh the book list after updating
         this.selectedBook = null; // Clear selectedBook after update
