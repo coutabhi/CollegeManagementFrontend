@@ -14,7 +14,7 @@
             <div class="mb-4">
               <label for="adminPassword" class="form-label">Password</label>
               <input type="password" required minlength="5" maxlength="16" id="adminPassword" placeholder="min 5 letters" class="form-control" name="password" #password="ngModel" [(ngModel)]="admin.password">
-              <div *ngIf="password.invalid && password.touched" class="text-danger">Password should not be blank</div>
+              <div *ngIf="password.invalid && password.touched" class="text-danger">Invalid Password</div>
             </div>
 
            

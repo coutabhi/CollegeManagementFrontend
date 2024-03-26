@@ -24,7 +24,7 @@
 </div><br><br><br><br>
 
 <div *ngIf="div1">
-    <div class="container" style="background-color:white; padding: 8px 15px 15px 15px; border-radius: 15px;width:1200px ;">
+    <div class="container" style="background-color:rgb(186, 224, 230); padding: 8px 15px 15px 15px; border-radius: 15px;width:1200px ;">
       <h2 style="text-align:center;color: rgb(10, 7, 7);">Students Data</h2>
           <table  cellspacing="15" style="width:100%" >
           <tr>
@@ -79,183 +79,181 @@
     </table>
     </div><br><br>
   </div>
-
   <div *ngIf="div2">
-    <div class="container" style="background-color:white; padding: 15px 15px 60px 15px; border-radius: 15px;width: 600px;">
-      <h2 style="text-align:center;color: rgb(14, 10, 10);">Add Students</h2><br>
+    <div class="container" style="background-color:rgb(186, 224, 230); padding: 15px 15px 60px 15px; border-radius: 6px;width: 600px;">
+      <h2 style="text-align:center;color: rgb(10, 6, 6);">Add Students</h2><br>
       <form #insertdata="ngForm" (ngSubmit)="insertdetails(insertdata)" novalidate>
   
-        <div class="form-outline" style="width: 100px;"> 
-          <label class="form-label" for="form2Example1">Roll No.</label>
-          <input type="text" id="form2Example1" placeholder="rollno" class="form-control" name="id" ngModel required>
-          <div *ngIf="insertdata.controls['id'].invalid && (insertdata.controls['id'].dirty || insertdata.controls['id'].touched)">
-            <small class="text-danger">Roll No. is required.</small>
+        <div class="form-group">
+          <label for="form2Example1">Roll No.</label>
+          <input type="text" id="form2Example1" placeholder="Roll No." class="form-control" name="id" ngModel required>
+          <div *ngIf="insertdata.controls['id'].invalid && (insertdata.controls['id'].dirty || insertdata.controls['id'].touched)" class="text-danger">
+            Roll No. is required
           </div>
         </div>
   
-        <div class="form-outline" style="width: 200px;"> 
-          <label class="form-label" for="form2Example2" >First Name</label>
-          <input type="text" id="form2Example2" placeholder="firstname" class="form-control" name="firstname" ngModel required>
-          <div *ngIf="insertdata.controls['firstname'].invalid && (insertdata.controls['firstname'].dirty || insertdata.controls['firstname'].touched)">
-            <small class="text-danger">First Name is required.</small>
+        <div class="form-group">
+          <label for="form2Example2">First Name</label>
+          <input type="text" id="form2Example2" placeholder="First Name" class="form-control" name="firstname" ngModel required>
+          <div *ngIf="insertdata.controls['firstname'].invalid && (insertdata.controls['firstname'].dirty || insertdata.controls['firstname'].touched)" class="text-danger">
+            First Name is required
           </div>
         </div>
   
-        <div class="form-outline"> 
-          <label class="form-label" for="form2Example3">Last Name</label>
-          <input type="text" id="form2Example3" placeholder="lastname" class="form-control" name="lastname" ngModel required>
-          <div *ngIf="insertdata.controls['lastname'].invalid && (insertdata.controls['lastname'].dirty || insertdata.controls['lastname'].touched)">
-            <small class="text-danger">Last Name is required.</small>
-          </div>
-        </div><br><br><br><br>
-  
-        <div class="form-outline" style="width: 170px;"> 
-          <label class="form-label" for="form2Example4">Gender</label>
-          <input type="text" id="form2Example4" placeholder="gender" class="form-control" name="gender" ngModel required>
-          <div *ngIf="insertdata.controls['gender'].invalid && (insertdata.controls['gender'].dirty || insertdata.controls['gender'].touched)">
-            <small class="text-danger">Gender is required.</small>
+        <div class="form-group">
+          <label for="form2Example3">Last Name</label>
+          <input type="text" id="form2Example3" placeholder="Last Name" class="form-control" name="lastname" ngModel required>
+          <div *ngIf="insertdata.controls['lastname'].invalid && (insertdata.controls['lastname'].dirty || insertdata.controls['lastname'].touched)" class="text-danger">
+            Last Name is required
           </div>
         </div>
   
-        <div class="form-outline" style="width: 170px;"> 
-          <label class="form-label" for="form2Example5">Branch</label>
-          <input type="text" id="form2Example5" placeholder="branch" class="form-control" name="branch" ngModel required>
-          <div *ngIf="insertdata.controls['branch'].invalid && (insertdata.controls['branch'].dirty || insertdata.controls['branch'].touched)">
-            <small class="text-danger">Branch is required.</small>
+        <div class="form-group">
+          <label for="form2Example4">Gender</label>
+          <input type="text" id="form2Example4" placeholder="Gender" class="form-control" name="gender" ngModel required>
+          <div *ngIf="insertdata.controls['gender'].invalid && (insertdata.controls['gender'].dirty || insertdata.controls['gender'].touched)" class="text-danger">
+            Gender is required
           </div>
         </div>
   
-        <div class="form-outline" style="width: 170px;"> 
-          <label class="form-label" for="form2Example6">Year</label>
-          <input type="text" id="form2Example6" placeholder="year" class="form-control" name="year" ngModel required>
-          <div *ngIf="insertdata.controls['year'].invalid && (insertdata.controls['year'].dirty || insertdata.controls['year'].touched)">
-            <small class="text-danger">Year is required.</small>
+        <div class="form-group">
+          <label for="form2Example5">Branch</label>
+          <input type="text" id="form2Example5" placeholder="Branch" class="form-control" name="branch" ngModel required>
+          <div *ngIf="insertdata.controls['branch'].invalid && (insertdata.controls['branch'].dirty || insertdata.controls['branch'].touched)" class="text-danger">
+            Branch is required
           </div>
         </div>
   
-        <div class="form-outline" style="width: 170px;"> 
-          <label class="form-label" for="form2Example7">Sem</label>
-          <input type="text" id="form2Example7" placeholder="sem" class="form-control" name="sem" ngModel required>
-          <div *ngIf="insertdata.controls['sem'].invalid && (insertdata.controls['sem'].dirty || insertdata.controls['sem'].touched)">
-            <small class="text-danger">Semester is required.</small>
+        <div class="form-group">
+          <label for="form2Example6">Year</label>
+          <input type="text" id="form2Example6" placeholder="Year" class="form-control" name="year" ngModel required>
+          <div *ngIf="insertdata.controls['year'].invalid && (insertdata.controls['year'].dirty || insertdata.controls['year'].touched)" class="text-danger">
+            Year is required
           </div>
         </div>
   
-        <div class="form-outline" style="width: 220px;"> 
-          <label class="form-label" for="form2Example8">Mobile No.</label>
-          <input type="text" id="form2Example8" placeholder="mobileno" class="form-control" name="mobileno" ngModel required>
-          <div *ngIf="insertdata.controls['mobileno'].invalid && (insertdata.controls['mobileno'].dirty || insertdata.controls['mobileno'].touched)">
-            <small class="text-danger">Mobile No. is required.</small>
+        <div class="form-group">
+          <label for="form2Example7">Semester</label>
+          <input type="text" id="form2Example7" placeholder="Semester" class="form-control" name="sem" ngModel required>
+          <div *ngIf="insertdata.controls['sem'].invalid && (insertdata.controls['sem'].dirty || insertdata.controls['sem'].touched)" class="text-danger">
+            Semester is required
           </div>
-        </div><br>
+        </div>
   
-        <div class="form-outline" style="width: 250px;"> 
-          <label class="form-label" for="form2Example9">Email address</label>
-          <input type="email" id="form2Example9" placeholder="abc@xyz.com" class="form-control" name="email" ngModel required>
-          <div *ngIf="insertdata.controls['email'].invalid && (insertdata.controls['email'].dirty || insertdata.controls['email'].touched)">
-            <small class="text-danger">Enter a valid email address.</small>
+        <div class="form-group">
+          <label for="form2Example8">Mobile No.</label>
+          <input type="text" id="form2Example8" placeholder="Mobile No." class="form-control" name="mobileno" ngModel required>
+          <div *ngIf="insertdata.controls['mobileno'].invalid && (insertdata.controls['mobileno'].dirty || insertdata.controls['mobileno'].touched)" class="text-danger">
+            Mobile No. is required
           </div>
-        </div><br><br><br><br><br>
+        </div>
   
-        <div class="form-outline mb-4">
-          <label class="form-label" for="form2Example10">Password</label>
-          <input type="password" required minlength="5" maxlength="16" id="form2Example10" placeholder="password" class="form-control" name="password" ngModel>
-          <div *ngIf="insertdata.controls['password'].invalid && (insertdata.controls['password'].dirty || insertdata.controls['password'].touched)">
-            <small class="text-danger">Password must be between 5 to 16 characters.</small>
+        <div class="form-group">
+          <label for="form2Example9">Email address</label>
+          <input type="email" id="form2Example9" placeholder="Email address" class="form-control" name="email" ngModel required email>
+          <div *ngIf="insertdata.controls['email'].invalid && (insertdata.controls['email'].dirty || insertdata.controls['email'].touched)" class="text-danger">
+            Enter a valid email address
           </div>
-        </div><br><br><br><br><br><br>
+        </div>
   
-        <button class="button" type="submit" [disabled]="insertdata.invalid">Add</button><br>
+        <div class="form-group">
+          <label for="form2Example10">Password</label>
+          <input type="password" id="form2Example10" placeholder="Password" class="form-control" name="password" ngModel required minlength="6">
+          <div *ngIf="insertdata.controls['password'].invalid && (insertdata.controls['password'].dirty || insertdata.controls['password'].touched)" class="text-danger">
+            Password is required (min length: 6)
+          </div>
+        </div>
+        <br>
+        <button class="button"  type="submit" [disabled]="insertdata.invalid">Add student</button>
       </form>
-    </div><br><br>
+    </div>
   </div>
-  
   <div *ngIf="div3">
-    <div class="container" style="background-color:white; padding: 15px 15px 60px 15px; border-radius: 15px;width: 600px;">
-      <h2 style="text-align:center;color: rgb(15, 9, 9);">Update Students</h2><br>
+    <div class="container" style="background-color:rgb(186, 224, 230); padding: 15px 15px 60px 15px; border-radius: 6px;width: 600px;" >
+      <h2 style="text-align:center;color: rgb(27, 19, 19);">Update Students</h2><br>
       <form #data="ngForm" (ngSubmit)="updateLoginpage(data)" novalidate>
-  
-        <div class="form-outline" style="width: 100px;"> 
-          <label class="form-label" for="form2Example1">Roll No.</label>
-          <input type="text" id="form2Example1" placeholder="rollno" class="form-control" name="id" ngModel required>
-          <div *ngIf="data.controls['id'].invalid && (data.controls['id'].dirty || data.controls['id'].touched)">
-            <small class="text-danger">Roll No. is required.</small>
+      
+        <div class="form-group">
+          <label for="form2Example1">Roll No.</label>
+          <input type="text" id="form2Example1" placeholder="Roll No." class="form-control" name="id" ngModel required>
+          <div *ngIf="data.controls['id'].invalid && (data.controls['id'].dirty || data.controls['id'].touched)" class="text-danger">
+            Roll No. is required
           </div>
         </div>
   
-        <div class="form-outline" style="width: 200px;"> 
-          <label class="form-label" for="form2Example2" >First Name</label>
-          <input type="text" id="form2Example2" placeholder="firstname" class="form-control" name="firstname" ngModel required>
-          <div *ngIf="data.controls['firstname'].invalid && (data.controls['firstname'].dirty || data.controls['firstname'].touched)">
-            <small class="text-danger">First Name is required.</small>
+        <div class="form-group">
+          <label for="form2Example2">First Name</label>
+          <input type="text" id="form2Example2" placeholder="First Name" class="form-control" name="firstname" ngModel required>
+          <div *ngIf="data.controls['firstname'].invalid && (data.controls['firstname'].dirty || data.controls['firstname'].touched)" class="text-danger">
+            First Name is required
           </div>
         </div>
   
-        <div class="form-outline"> 
-          <label class="form-label" for="form2Example3">Last Name</label>
-          <input type="text" id="form2Example3" placeholder="lastname" class="form-control" name="lastname" ngModel required>
-          <div *ngIf="data.controls['lastname'].invalid && (data.controls['lastname'].dirty || data.controls['lastname'].touched)">
-            <small class="text-danger">Last Name is required.</small>
-          </div>
-        </div><br><br><br><br>
-  
-        <div class="form-outline" style="width: 170px;"> 
-          <label class="form-label" for="form2Example4">Gender</label>
-          <input type="text" id="form2Example4" placeholder="gender" class="form-control" name="gender" ngModel required>
-          <div *ngIf="data.controls['gender'].invalid && (data.controls['gender'].dirty || data.controls['gender'].touched)">
-            <small class="text-danger">Gender is required.</small>
+        <div class="form-group">
+          <label for="form2Example3">Last Name</label>
+          <input type="text" id="form2Example3" placeholder="Last Name" class="form-control" name="lastname" ngModel required>
+          <div *ngIf="data.controls['lastname'].invalid && (data.controls['lastname'].dirty || data.controls['lastname'].touched)" class="text-danger">
+            Last Name is required
           </div>
         </div>
   
-        <div class="form-outline" style="width: 170px;"> 
-          <label class="form-label" for="form2Example5">Branch</label>
-          <input type="text" id="form2Example5" placeholder="branch" class="form-control" name="branch" ngModel required>
-          <div *ngIf="data.controls['branch'].invalid && (data.controls['branch'].dirty || data.controls['branch'].touched)">
-            <small class="text-danger">Branch is required.</small>
+        <div class="form-group">
+          <label for="form2Example4">Gender</label>
+          <input type="text" id="form2Example4" placeholder="Gender" class="form-control" name="gender" ngModel required>
+          <div *ngIf="data.controls['gender'].invalid && (data.controls['gender'].dirty || data.controls['gender'].touched)" class="text-danger">
+            Gender is required
           </div>
         </div>
   
-        <div class="form-outline" style="width: 170px;"> 
-          <label class="form-label" for="form2Example6">Year</label>
-          <input type="text" id="form2Example6" placeholder="year" class="form-control" name="year" ngModel required>
-          <div *ngIf="data.controls['year'].invalid && (data.controls['year'].dirty || data.controls['year'].touched)">
-            <small class="text-danger">Year is required.</small>
+        <div class="form-group">
+          <label for="form2Example5">Branch</label>
+          <input type="text" id="form2Example5" placeholder="Branch" class="form-control" name="branch" ngModel required>
+          <div *ngIf="data.controls['branch'].invalid && (data.controls['branch'].dirty || data.controls['branch'].touched)" class="text-danger">
+            Branch is required
           </div>
         </div>
   
-        <div class="form-outline" style="width: 170px;"> 
-          <label class="form-label" for="form2Example7">Sem</label>
-          <input type="text" id="form2Example7" placeholder="sem" class="form-control" name="sem" ngModel required>
-          <div *ngIf="data.controls['sem'].invalid && (data.controls['sem'].dirty || data.controls['sem'].touched)">
-            <small class="text-danger">Semester is required.</small>
+        <div class="form-group">
+          <label for="form2Example6">Year</label>
+          <input type="text" id="form2Example6" placeholder="Year" class="form-control" name="year" ngModel required>
+          <div *ngIf="data.controls['year'].invalid && (data.controls['year'].dirty || data.controls['year'].touched)" class="text-danger">
+            Year is required
           </div>
         </div>
   
-        <div class="form-outline" style="width: 220px;"> 
-          <label class="form-label" for="form2Example8">Mobile No.</label>
-          <input type="text" id="form2Example8" placeholder="mobileno" class="form-control" name="mobileno" ngModel required>
-          <div *ngIf="data.controls['mobileno'].invalid && (data.controls['mobileno'].dirty || data.controls['mobileno'].touched)">
-            <small class="text-danger">Mobile No. is required.</small>
+        <div class="form-group">
+          <label for="form2Example7">Semester</label>
+          <input type="text" id="form2Example7" placeholder="Semester" class="form-control" name="sem" ngModel required>
+          <div *ngIf="data.controls['sem'].invalid && (data.controls['sem'].dirty || data.controls['sem'].touched)" class="text-danger">
+            Semester is required
           </div>
-        </div><br>
+        </div>
   
-        <div class="form-outline" style="width: 250px;"> 
-          <label class="form-label" for="form2Example9">Email address</label>
-          <input type="email" id="form2Example9" placeholder="abc@xyz.com" class="form-control" name="email" ngModel required>
-          <div *ngIf="data.controls['email'].invalid && (data.controls['email'].dirty || data.controls['email'].touched)">
-            <small class="text-danger">Enter a valid email address.</small>
+        <div class="form-group">
+          <label for="form2Example8">Mobile No.</label>
+          <input type="text" id="form2Example8" placeholder="Mobile No." class="form-control" name="mobileno" ngModel required>
+          <div *ngIf="data.controls['mobileno'].invalid && (data.controls['mobileno'].dirty || data.controls['mobileno'].touched)" class="text-danger">
+            Mobile No. is required
           </div>
-        </div><br><br><br><br><br>
+        </div>
   
-        <div class="form-outline mb-4">
-          <label class="form-label" for="form2Example10">Password</label>
-          <input type="password" required minlength="5" maxlength="16" id="form2Example10" placeholder="password" class="form-control" name="password" ngModel>
-          <div *ngIf="data.controls['password'].invalid && (data.controls['password'].dirty || data.controls['password'].touched)">
-            <small class="text-danger">Password must be between 5 to 16 characters.</small>
+        <div class="form-group">
+          <label for="form2Example9">Email address</label>
+          <input type="email" id="form2Example9" placeholder="Email address" class="form-control" name="email" ngModel required email>
+          <div *ngIf="data.controls['email'].invalid && (data.controls['email'].dirty || data.controls['email'].touched)" class="text-danger">
+            Enter a valid email address
           </div>
-        </div><br><br><br><br><br><br>
+        </div>
   
-        <button class="button" type="submit" [disabled]="data.invalid">Update</button><br>
+        <div class="form-group">
+          <label for="form2Example10">Password</label>
+          <input type="password" id="form2Example10" placeholder="Password" class="form-control" name="password" ngModel required minlength="6">
+          <div *ngIf="data.controls['password'].invalid && (data.controls['password'].dirty || data.controls['password'].touched)" class="text-danger">
+            Password is required (min length: 6)
+          </div>
+        </div>
+  
+        <button class="button" type="submit" [disabled]="data.invalid">Update</button>
       </form>
     </div><br><br>
   </div>
@@ -264,8 +262,8 @@
 
 <div *ngIf="div4">
 <!-- <div class="operation"> -->
-    <div class="container" style="background-color:white; padding: 5px 5px 45px 5px; border-radius: 15px; width: 400px;">
-      <h2 style="text-align:center;color: red;">Delete Students</h2>
+    <div class="container" style="background-color:rgb(186, 224, 230); padding: 5px 5px 45px 5px; border-radius: 6px; width: 400px;">
+      <h2 style="text-align:center;color: rgb(12, 7, 7);">Delete Students</h2>
       <form #data="ngForm" (ngSubmit)="deleteLoginpage(data)">
       <div class="form-outline" style="width: 200px;"> 
       <label class="form-label" >Roll No.</label>
