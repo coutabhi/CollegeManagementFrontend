@@ -4,7 +4,7 @@
     padding: 0px 0px;
   }
   span{
-    background-color:#3399ff; 
+    background-color:#0b1014; 
     color:whitesmoke;
     padding: 5px 35px 5px 35px;
     border-radius: 15px;
@@ -16,7 +16,7 @@
       text-align: center;
     }
     th{
-      background-color: #3399ff;
+      background-color: #edf0f3;
     }
 
     td{
@@ -29,11 +29,7 @@
     
   }
 
-  /* .operation{
-    
-    
-    width: 80px;
-  } */
+
 
   .button {
     margin-left: 230px ;
@@ -45,17 +41,17 @@
     text-decoration: none;
     outline: none;
     color: #fff;
-    background-color: #3399ff;
+    background-color: #080d11;
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
     position: absolute;
   }
   
-  .button:hover {background-color:brown}
+  .button:hover {background-color:rgb(173, 173, 204)}
   
   .button:active {
-    background-color: #3399ff;
+    background-color: #020405;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
   }

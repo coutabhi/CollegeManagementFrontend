@@ -4,7 +4,7 @@
   padding: 0px 0px;
 }
 span{
-  background-color:#3399ff; 
+  background-color:#06080a; 
   color:whitesmoke;
   padding: 5px 35px 5px 35px;
   border-radius: 15px;
@@ -52,10 +52,13 @@ div.form-outline{
   position: absolute;
 }
 
-.button:hover {background-color:brown}
+.button:hover {background-color:rgba(182, 190, 214, 0.918)}
 
 .button:active {
-  background-color: #3399ff;
+  background-color: #070a0c;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+.fgh{
+  color: #06080a;
 }
