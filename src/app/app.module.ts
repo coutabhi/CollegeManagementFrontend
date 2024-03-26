@@ -89,6 +89,7 @@ import { BookComponent } from './book/book.component';
 import { AddBookComponent } from './book/add-book/add-book.component';
 import { LibDashComponent } from './librarian/lib-dash/lib-dash.component';
 import { AdminForgotComponent } from './admin/admin-forgot/admin-forgot.component';
+import { AddEventComponent } from './admin/add-event/add-event.component';
 
 
 
@@ -180,6 +181,7 @@ import { AdminForgotComponent } from './admin/admin-forgot/admin-forgot.componen
     AddBookComponent,
     LibDashComponent,
     AdminForgotComponent,
+    AddEventComponent,
     
     
   ],

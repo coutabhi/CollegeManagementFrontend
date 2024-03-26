@@ -66,6 +66,7 @@ import { BookComponent } from './book/book.component';
 import { AddBookComponent } from './book/add-book/add-book.component';
 import { LibDashComponent } from './librarian/lib-dash/lib-dash.component';
 import { AdminForgotComponent } from './admin/admin-forgot/admin-forgot.component';
+import { AddEventComponent } from './admin/add-event/add-event.component';
 
 const routes: Routes = [
   {path:'', component : HomeComponent},
@@ -81,6 +82,7 @@ const routes: Routes = [
   {path:'top-rec', component : TopRecComponent},
   {path:'admin', component : AdminComponent,data: { title:'', navigation: true,footer: true}},
   {path:'addadmin', component : AdminOpsComponent,data: { title:'', navigation: false,footer: false}},
+  {path:'addevent', component : AddEventComponent,data: { title:'', navigation: false,footer: false}},
   {path:'librarian', component : LibrarianComponent,data: { title:'', navigation: true,footer: true}},
   {path:'libdash', component : LibDashComponent,data: { title:'', navigation: false,footer: false}},
   {path:'addbook', component : AddBookComponent,data: { title:'', navigation: false,footer: false}},
