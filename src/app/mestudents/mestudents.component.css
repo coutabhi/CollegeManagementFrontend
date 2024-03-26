@@ -4,7 +4,7 @@
     padding: 0px 0px;
   }
   span{
-    background-color:#3399ff; 
+    background-color:#121518; 
     color:whitesmoke;
     padding: 5px 35px 5px 35px;
     border-radius: 15px;
@@ -16,7 +16,7 @@
       text-align: center;
     }
     th{
-      background-color: #3399ff;
+      background-color: #8abada
     }
 
     td{
@@ -29,14 +29,14 @@
     
   }
 
-  /* .operation{
-    
-    
-    width: 80px;
-  } */
+  
+  .form-control{
+    width: 110px;
 
+  }
+ 
   .button {
-    margin-left: 230px ;
+    margin-left: 150px ;
     display: block;
     padding: 5px 35px;
     font-size: 24px;
@@ -45,17 +45,17 @@
     text-decoration: none;
     outline: none;
     color: #fff;
-    background-color: #3399ff;
+    background-color: #181e24;
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
     position: absolute;
   }
   
-  .button:hover {background-color: brown}
+  .button:hover {background-color: rgb(49, 67, 90)}
   
   .button:active {
-    background-color:  #3399ff;
+    background-color:  #2f3e4d;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
   }
