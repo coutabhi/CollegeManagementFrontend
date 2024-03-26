@@ -4,10 +4,12 @@
     padding: 0px 0px;
   }
   span{
-    /* background-color:black;  */
-    /* color:white; */
-    padding: 5px 35px 5px 35px;
+    
+    padding: 5px 35px 5px 1px;
     border-radius: 5px;
+    text-align: left;
+    width: 150px;
+    font-size: smaller;
     }
   
     table, th, td {
@@ -41,7 +43,8 @@
     border-radius: 5px;
     position: absolute;
   }
-  
+
+   
   .button:hover {background-color: white;
   color: black;}
   

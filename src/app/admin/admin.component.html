@@ -17,9 +17,7 @@
               <div *ngIf="password.invalid && password.touched" class="text-danger">Password should not be blank</div>
             </div>
 
-            <div class="text-center">
-              <a href="/adminforgot"><span style="color: rgb(96, 96, 245);">Forgot Password?</span></a>
-            </div>
+           
             <button [disabled]="loginform.form.invalid" class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
           </form>
         </div>
